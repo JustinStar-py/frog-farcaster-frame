@@ -1,63 +1,85 @@
 import { serve } from '@hono/node-server'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { Button, Frog, TextInput } from 'frog'
-import { devtools } from 'frog/dev'
+import { devtools } from 'frog/dev';
 // import { neynar } from 'frog/hubs'
 
+import * as qs from 'qs';
+import axios from 'axios';
+import * as dotenv from 'dotenv';
+import * as fs from 'fs';
+import * as path from 'path';
+
+
+dotenv.config();
 export const app = new Frog({
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
 })
 
+
 app.use('/*', serveStatic({ root: './public' }))
 
-app.frame('/', (c) => {
+// degen chart frame
+app.frame('/degen-chart', (c) => {
   const { buttonValue, inputText, status } = c
-  const fruit = inputText || buttonValue
+  const action = status === 'initial' ? process.env.STATIC_NODE_URL + '/degen-chart' : process.env.STATIC_NODE_URL + '/degen-chart-show'
+  const image = status === 'initial' ? `${process.env.STATIC_NODE_URL}/gifs/degen-chart.gif` : `${process.env.STATIC_NODE_URL}/gifs/chart-timeframe.gif`
+  const frameSharingText = "https://warpcast.com/~/compose?text=Check $DEGEN chart easily here! ✨" + encodeURIComponent("\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/degen-chart"
+  const intervalTimesButtons = ["15m", "1h", "4h", "1d"]
+ 
+  const buttons = status === 'initial' ? [
+      <Button value="show-chart">$DEGEN Chart</Button>,
+      <Button.Link href={frameSharingText}>Share Frame</Button.Link>
+  ] : [
+      <Button value={intervalTimesButtons[0]}>{intervalTimesButtons[0]}</Button>,
+      <Button value={intervalTimesButtons[1]}>{intervalTimesButtons[1]}</Button>,
+      <Button value={intervalTimesButtons[2]}>{intervalTimesButtons[2]}</Button>,
+      <Button value={intervalTimesButtons[3]}>{intervalTimesButtons[3]}</Button>,
+  ]
+
   return c.res({
-    image: (
-      <div
-        style={{
-          alignItems: 'center',
-          background:
-            status === 'response'
-              ? 'linear-gradient(to right, #472889, #17101F)'
-              : 'black',
-          backgroundSize: '100% 100%',
-          display: 'flex',
-          flexDirection: 'column',
-          flexWrap: 'nowrap',
-          height: '100%',
-          justifyContent: 'center',
-          textAlign: 'center',
-          width: '100%',
-        }}
-      >
-        <div
-          style={{
-            color: 'white',
-            fontSize: 60,
-            fontStyle: 'normal',
-            letterSpacing: '-0.025em',
-            lineHeight: 1.4,
-            marginTop: 30,
-            padding: '0 120px',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {status === 'response'
-            ? `Nice choice.${fruit ? ` ${fruit.toUpperCase()}!!` : ''}`
-            : 'Welcome!'}
-        </div>
-      </div>
-    ),
+    action,
+    image,
+    intents: buttons,
+  })
+})
+
+app.frame('/degen-chart-show', async (c) => {
+  const { buttonValue, status } = c
+  const intervalTimesButtons = ["15m", "1h", "4h", "1d"]
+  
+  const fetchImage = async () => {
+    const img = await axios.get('https://api.chart-img.com/v1/tradingview/advanced-chart/storage', {
+        headers: {
+          Authorization: 'Bearer ' + process.env.CHART_IMG_KEY,
+        },
+        params: {
+          symbol: 'BYBIT:DEGENUSDT',
+          interval: buttonValue,
+          studies: [],
+        },
+        paramsSerializer: (params: any) => {
+          return qs.stringify(params, { arrayFormat: 'repeat' })
+        },
+      })
+      .then((res: any) => {
+        return res.data.url
+      }).catch((err: any) => {
+        console.error(err)
+      })
+
+    return img;
+  }
+
+  return c.res({
+    image: await fetchImage(),
     intents: [
-      <TextInput placeholder="Enter custom fruit..." />,
-      <Button value="apples">Apples</Button>,
-      <Button value="oranges">Oranges</Button>,
-      <Button value="bananas">Bananas</Button>,
-      status === 'response' && <Button.Reset>Reset</Button.Reset>,
-    ],
+      <Button value={intervalTimesButtons[0]}>{intervalTimesButtons[0]}</Button>,
+      <Button value={intervalTimesButtons[1]}>{intervalTimesButtons[1]}</Button>,
+      <Button value={intervalTimesButtons[2]}>{intervalTimesButtons[2]}</Button>,
+      <Button value={intervalTimesButtons[3]}>{intervalTimesButtons[3]}</Button>
+    ]
   })
 })
 
