@@ -6,7 +6,7 @@ import { devtools } from 'frog/dev';
 
 import * as qs from 'qs';
 import axios from 'axios';
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -95,13 +95,40 @@ app.frame('/degen-chart-show', async (c) => {
  */
 app.frame('/farcaster-user-analytics', (c) => {
   const { buttonValue, inputText, status } = c
+  const bgStyle = {
+    position: 'absolute', 
+    width: '100%', 
+    height: '100%' 
+  }
+  
+  const titleTextStyle = {
+    position: 'absolute', 
+    top: '65%', 
+    textShadow: '0px 0px 17px #fff', 
+    fontSize: 65, 
+    fontWeight: '800', 
+    fontFamily: 'monospace',
+  }
+
+  const subTitleTextStyle = {
+    position: 'absolute', 
+    top: '88%', 
+    fontSize: 30, 
+    fontWeight: '300',
+  }
+  
   return c.res({
     image: (
+      buttonValue !== 'my-state' ? 
       <div style={{ color: 'white', display: 'flex', backgroundColor: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-        <img width={300} src="https://pbs.twimg.com/card_img/1780661788171759616/CLT7OKIf?format=png&name=large" style={{ position: 'absolute', width: '100%', height: '100%' }} />
-        <span style={{ position: 'absolute', top: '65%', textShadow: '0px 0px 17px #fff', fontSize: 60, fontWeight: '700' }}>Farcaster analyzer</span>
-        <span style={{ position: 'absolute', top: '88%', fontSize: 30, fontWeight: '300' }}>Frame by @justin-eth</span>
-      </div>
+         <img width={300} src="https://pbs.twimg.com/card_img/1780661788171759616/CLT7OKIf?format=png&name=large" style={bgStyle} />
+         <span style={titleTextStyle}>Farcaster User Analyzer</span>
+         <span style={subTitleTextStyle}>Frame by @justin-eth</span>
+    </div> : 
+    <div style={{ color: 'white', display: 'flex', backgroundColor: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+         <img width={300} src="https://pbs.twimg.com/card_img/1780661788171759616/CLT7OKIf?format=png&name=large" style={bgStyle} />
+         <span style={titleTextStyle}>Analyzingggg</span>
+    </div>     
     ),
     intents: [
     <Button value="my-state">my state</Button>,
