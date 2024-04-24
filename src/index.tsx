@@ -21,7 +21,7 @@ app.frame('/', (c) => {
           alignItems: 'center',
           background:
             status === 'response'
-              ? 'linear-gradient(to right, #432889, #17101F)'
+              ? 'linear-gradient(to right, #472889, #17101F)'
               : 'black',
           backgroundSize: '100% 100%',
           display: 'flex',
