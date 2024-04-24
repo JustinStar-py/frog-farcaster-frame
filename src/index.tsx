@@ -20,7 +20,12 @@ export const app = new Frog({
 
 app.use('/*', serveStatic({ root: './public' }))
 
-// degen chart frame
+/**
+* Degen Chart routing 
+* @route /degen-chart
+* @route /degen-chart-show
+*/
+
 app.frame('/degen-chart', (c) => {
   const { buttonValue, inputText, status } = c
   const action = status === 'initial' ? process.env.STATIC_NODE_URL + '/degen-chart' : process.env.STATIC_NODE_URL + '/degen-chart-show'
@@ -82,6 +87,31 @@ app.frame('/degen-chart-show', async (c) => {
     ]
   })
 })
+
+
+/**
+ * Farcaster analytics
+ * @route /farcaster-user-analytics
+ */
+app.frame('/farcaster-user-analytics', (c) => {
+  const { buttonValue, inputText, status } = c
+  return c.res({
+    image: (
+      <div style={{ color: 'white', display: 'flex', backgroundColor: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+        <img width={300} src="https://pbs.twimg.com/card_img/1780661788171759616/CLT7OKIf?format=png&name=large" style={{ position: 'absolute', width: '100%', height: '100%' }} />
+        <span style={{ position: 'absolute', top: '65%', textShadow: '0px 0px 17px #fff', fontSize: 60, fontWeight: '700' }}>Farcaster analyzer</span>
+        <span style={{ position: 'absolute', top: '88%', fontSize: 30, fontWeight: '300' }}>Frame by @justin-eth</span>
+      </div>
+    ),
+    intents: [
+    <Button value="my-state">my state</Button>,
+    <Button value="share-frame">Share Frame</Button>,
+    <TextInput placeholder="farcaster username" />],
+  })
+})
+
+
+
 
 const port = 3000
 console.log(`Server is running on port ${port}`)

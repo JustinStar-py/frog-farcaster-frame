@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm run '/^dev:.*/'",
-    "dev:ngrok": "ngrok http --domain=jolly-diverse-herring.ngrok-free.app 5173",
     "dev:run": "frog dev",
+    "dev:ngrok": "ngrok http --domain=jolly-diverse-herring.ngrok-free.app 5173",
     "lint": "eslint . --ext .ts,.tsx",
     "serve": "tsx watch src/index.ts"
   },
