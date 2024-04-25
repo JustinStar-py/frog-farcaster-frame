@@ -2,6 +2,8 @@ import { serve } from '@hono/node-server'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev';
+import { createSystem } from 'frog/ui';
+import { DuneClient } from "@duneanalytics/client-sdk";
 // import { neynar } from 'frog/hubs'
 
 import * as qs from 'qs';
@@ -25,7 +27,6 @@ app.use('/*', serveStatic({ root: './public' }))
 * @route /degen-chart
 * @route /degen-chart-show
 */
-
 app.frame('/degen-chart', (c) => {
   const { buttonValue, inputText, status } = c
   const action = status === 'initial' ? process.env.STATIC_NODE_URL + '/degen-chart' : process.env.STATIC_NODE_URL + '/degen-chart-show'
@@ -93,48 +94,82 @@ app.frame('/degen-chart-show', async (c) => {
  * Farcaster analytics
  * @route /farcaster-user-analytics
  */
-app.frame('/farcaster-user-analytics', (c) => {
-  const { buttonValue, inputText, status } = c
+app.frame('/farcaster-user-analytics', async (c) => {
+  const { buttonValue, inputText, status, frameData } = c
+
   const bgStyle = {
     position: 'absolute', 
     width: '100%', 
-    height: '100%' 
+    height: '100%',
   }
-  
+
   const titleTextStyle = {
     position: 'absolute', 
-    top: '65%', 
-    textShadow: '0px 0px 17px #fff', 
+    top: '70%', 
     fontSize: 65, 
-    fontWeight: '800', 
-    fontFamily: 'monospace',
   }
 
   const subTitleTextStyle = {
     position: 'absolute', 
     top: '88%', 
     fontSize: 30, 
-    fontWeight: '300',
   }
-  
+
+  const profileStyle = {
+    position: 'absolute', 
+    width: '250px',
+    height: '250px',
+    top: '15%',
+    left: '10%', 
+    border: '10px solid #A6EA35',
+    borderRadius: '14px',
+  }
+
+  const usernameStyle = {
+     position: 'absolute',
+     top: '70%',
+     left: '10%',
+     fontSize: '35px',
+  }
+
+  const fidStyle = {
+    position: 'absolute',
+    top: '80%',
+    left: '10%',
+    fontSize: '25px',
+ }
+
   return c.res({
     image: (
       buttonValue !== 'my-state' ? 
-      <div style={{ color: 'white', display: 'flex', backgroundColor: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
          <img width={300} src="https://pbs.twimg.com/card_img/1780661788171759616/CLT7OKIf?format=png&name=large" style={bgStyle} />
          <span style={titleTextStyle}>Farcaster User Analyzer</span>
          <span style={subTitleTextStyle}>Frame by @justin-eth</span>
     </div> : 
-    <div style={{ color: 'white', display: 'flex', backgroundColor: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-         <img width={300} src="https://pbs.twimg.com/card_img/1780661788171759616/CLT7OKIf?format=png&name=large" style={bgStyle} />
-         <span style={titleTextStyle}>Analyzingggg</span>
+    <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', 
+    height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ position: 'absolute', display: 'flex', flexDirection: 'column', gap: '10px', width: '95vw', height: '90vh', backgroundColor: '#1E293B', borderRadius: '14px', padding: '25px', border: '25px solid #A6EA35'}}>
+        <img width={100} src="https://i.imgur.com/qfbNFFj.jpg" style={profileStyle} />
+        <span style={usernameStyle}>@JustinStar</span>
+        <span style={fidStyle}>FID: {frameData?.fid}</span>
+        <div style={{ position: 'absolute', top: '30%', left: '40%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
+           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#3AB5F1' }}>Score:</span>
+           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#3AB5F1' }}>Reactions:</span>
+           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#3AB5F1' }}>Comments:</span>
+           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#3AB5F1' }}>Comments:</span>
+           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#A6EA35' }}>Comments:</span>
+        </div>
+      </div>
     </div>     
     ),
+    imageAspectRatio: '1.91:1',
     intents: [
-    <Button value="my-state">my state</Button>,
+    <Button value="my-state">My State</Button>,
     <Button value="share-frame">Share Frame</Button>,
     <TextInput placeholder="farcaster username" />],
-  })
+  },
+)
 })
 
 
