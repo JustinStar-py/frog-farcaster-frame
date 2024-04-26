@@ -1,0 +1,1383 @@
+[
+  {
+    "hash": "0x34ed1f77a1e5e7087cbe5161e17420d06e11fe16",
+    "parentUrl": "https://warpcast.com/~/channel/alfafrens",
+    "threadHash": "0x34ed1f77a1e5e7087cbe5161e17420d06e11fe16",
+    "text": "Omg one hundred and fiddy subscribers \n\n❤️‍🔥❤️‍🔥❤️‍🔥",
+    "embeds": {
+      "images": [
+        {
+          "type": "image",
+          "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2c8cb701-2102-42fb-edea-500e2eefae00/original",
+          "sourceUrl": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2c8cb701-2102-42fb-edea-500e2eefae00/original",
+          "alt": "Cast image embed",
+          "originalUrl": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2c8cb701-2102-42fb-edea-500e2eefae00/original"
+        }
+      ],
+      "urls": [],
+      "frames": [],
+      "quoteCasts": []
+    },
+    "mentions": [],
+    "mentionsPositions": [],
+    "external": false,
+    "author": {
+      "fid": "230147",
+      "followingCount": 460,
+      "followerCount": 23504,
+      "pfp": {
+        "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/401ad8f2-70e3-4bf7-d715-891470ef5a00/original",
+        "verified": false
+      },
+      "bio": {
+        "text": "Building /co /degen-lotto /farcastles | Bot acc: @ed1t @3dit @3d1t | ?degen !bookmark !mint | Collaborative collections: Based Toys, Degen, Ham, Perlvision, Pi",
+        "mentions": [
+          "ed1t",
+          "3dit",
+          "3d1t"
+        ]
+      },
+      "external": false,
+      "custodyAddress": "0x2a54d66578ea6b451a5d44d149bedd3284e9fd24",
+      "connectedAddress": "0xb70399fc376c1b3cf3493556d2f14942323ef44f",
+      "allConnectedAddresses": {
+        "ethereum": [
+          "0xb70399fc376c1b3cf3493556d2f14942323ef44f"
+        ],
+        "solana": []
+      },
+      "username": "edit",
+      "displayName": "edit",
+      "registeredAt": 1705855203000
+    },
+    "parentAuthor": null,
+    "timestamp": 1714140876000,
+    "replies": {
+      "count": 49
+    },
+    "reactions": {
+      "count": 212
+    },
+    "recasts": {
+      "count": 25
+    },
+    "channel": {
+      "_id": "662823f79963d260b17ee11c",
+      "channelId": "alfafrens",
+      "__v": 0,
+      "createdAt": 1713904257,
+      "description": "New SocialFi app launching soon on Base, powered by $DEGEN and @superfluid. 🫂 https://tinyurl.com/alfafrens-app",
+      "imageUrl": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/a680cd3f-ab29-425b-1316-ced194d24500/original",
+      "leadFid": "214570",
+      "name": "AlfaFrens",
+      "url": "https://warpcast.com/~/channel/alfafrens"
+    },
+    "childCast": {
+      "hash": "0x600a7169281ad024ee3b1bfe7887b9f8a9d0b7bd",
+      "parentHash": "0x34ed1f77a1e5e7087cbe5161e17420d06e11fe16",
+      "parentFid": "230147",
+      "threadHash": "0x34ed1f77a1e5e7087cbe5161e17420d06e11fe16",
+      "text": "Okay Okay, 29 $DEGEN for @edit",
+      "embeds": {
+        "images": [],
+        "urls": [],
+        "frames": [],
+        "quoteCasts": []
+      },
+      "mentions": [
+        {
+          "fid": "230147",
+          "followingCount": 460,
+          "followerCount": 23504,
+          "pfp": {
+            "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/401ad8f2-70e3-4bf7-d715-891470ef5a00/original",
+            "verified": false
+          },
+          "bio": {
+            "text": "Building /co /degen-lotto /farcastles | Bot acc: @ed1t @3dit @3d1t | ?degen !bookmark !mint | Collaborative collections: Based Toys, Degen, Ham, Perlvision, Pi",
+            "mentions": [
+              "ed1t",
+              "3dit",
+              "3d1t"
+            ]
+          },
+          "external": false,
+          "custodyAddress": "0x2a54d66578ea6b451a5d44d149bedd3284e9fd24",
+          "connectedAddress": "0xb70399fc376c1b3cf3493556d2f14942323ef44f",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0xb70399fc376c1b3cf3493556d2f14942323ef44f"
+            ],
+            "solana": []
+          },
+          "username": "edit",
+          "displayName": "edit",
+          "registeredAt": 1705855203000
+        }
+      ],
+      "mentionsPositions": [
+        25
+      ],
+      "external": false,
+      "author": {
+        "fid": "427775",
+        "followingCount": 376,
+        "followerCount": 210,
+        "pfp": {
+          "url": "https://i.imgur.com/qfbNFFj.jpg",
+          "verified": false
+        },
+        "bio": {
+          "text": "Solidity and web3 developer",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+        "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+          ],
+          "solana": []
+        },
+        "username": "justin-eth",
+        "displayName": "JustinStar",
+        "registeredAt": 1711886607000
+      },
+      "parentAuthor": {
+        "fid": "230147",
+        "followingCount": 460,
+        "followerCount": 23504,
+        "pfp": {
+          "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/401ad8f2-70e3-4bf7-d715-891470ef5a00/original",
+          "verified": false
+        },
+        "bio": {
+          "text": "Building /co /degen-lotto /farcastles | Bot acc: @ed1t @3dit @3d1t | ?degen !bookmark !mint | Collaborative collections: Based Toys, Degen, Ham, Perlvision, Pi",
+          "mentions": [
+            "ed1t",
+            "3dit",
+            "3d1t"
+          ]
+        },
+        "external": false,
+        "custodyAddress": "0x2a54d66578ea6b451a5d44d149bedd3284e9fd24",
+        "connectedAddress": "0xb70399fc376c1b3cf3493556d2f14942323ef44f",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0xb70399fc376c1b3cf3493556d2f14942323ef44f"
+          ],
+          "solana": []
+        },
+        "username": "edit",
+        "displayName": "edit",
+        "registeredAt": 1705855203000
+      },
+      "timestamp": 1714164235000,
+      "replies": {
+        "count": 1
+      },
+      "reactions": {
+        "count": 0
+      },
+      "recasts": {
+        "count": 0
+      },
+      "channel": null
+    },
+    "childrenCasts": [
+      {
+        "hash": "0x600a7169281ad024ee3b1bfe7887b9f8a9d0b7bd",
+        "parentHash": "0x34ed1f77a1e5e7087cbe5161e17420d06e11fe16",
+        "parentFid": "230147",
+        "threadHash": "0x34ed1f77a1e5e7087cbe5161e17420d06e11fe16",
+        "text": "Okay Okay, 29 $DEGEN for @edit",
+        "embeds": {
+          "images": [],
+          "urls": [],
+          "frames": [],
+          "quoteCasts": []
+        },
+        "mentions": [
+          {
+            "fid": "230147",
+            "followingCount": 460,
+            "followerCount": 23504,
+            "pfp": {
+              "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/401ad8f2-70e3-4bf7-d715-891470ef5a00/original",
+              "verified": false
+            },
+            "bio": {
+              "text": "Building /co /degen-lotto /farcastles | Bot acc: @ed1t @3dit @3d1t | ?degen !bookmark !mint | Collaborative collections: Based Toys, Degen, Ham, Perlvision, Pi",
+              "mentions": [
+                "ed1t",
+                "3dit",
+                "3d1t"
+              ]
+            },
+            "external": false,
+            "custodyAddress": "0x2a54d66578ea6b451a5d44d149bedd3284e9fd24",
+            "connectedAddress": "0xb70399fc376c1b3cf3493556d2f14942323ef44f",
+            "allConnectedAddresses": {
+              "ethereum": [
+                "0xb70399fc376c1b3cf3493556d2f14942323ef44f"
+              ],
+              "solana": []
+            },
+            "username": "edit",
+            "displayName": "edit",
+            "registeredAt": 1705855203000
+          }
+        ],
+        "mentionsPositions": [
+          25
+        ],
+        "external": false,
+        "author": {
+          "fid": "427775",
+          "followingCount": 376,
+          "followerCount": 210,
+          "pfp": {
+            "url": "https://i.imgur.com/qfbNFFj.jpg",
+            "verified": false
+          },
+          "bio": {
+            "text": "Solidity and web3 developer",
+            "mentions": []
+          },
+          "external": false,
+          "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+          "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+            ],
+            "solana": []
+          },
+          "username": "justin-eth",
+          "displayName": "JustinStar",
+          "registeredAt": 1711886607000
+        },
+        "parentAuthor": {
+          "fid": "230147",
+          "followingCount": 460,
+          "followerCount": 23504,
+          "pfp": {
+            "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/401ad8f2-70e3-4bf7-d715-891470ef5a00/original",
+            "verified": false
+          },
+          "bio": {
+            "text": "Building /co /degen-lotto /farcastles | Bot acc: @ed1t @3dit @3d1t | ?degen !bookmark !mint | Collaborative collections: Based Toys, Degen, Ham, Perlvision, Pi",
+            "mentions": [
+              "ed1t",
+              "3dit",
+              "3d1t"
+            ]
+          },
+          "external": false,
+          "custodyAddress": "0x2a54d66578ea6b451a5d44d149bedd3284e9fd24",
+          "connectedAddress": "0xb70399fc376c1b3cf3493556d2f14942323ef44f",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0xb70399fc376c1b3cf3493556d2f14942323ef44f"
+            ],
+            "solana": []
+          },
+          "username": "edit",
+          "displayName": "edit",
+          "registeredAt": 1705855203000
+        },
+        "timestamp": 1714164235000,
+        "replies": {
+          "count": 1
+        },
+        "reactions": {
+          "count": 0
+        },
+        "recasts": {
+          "count": 0
+        },
+        "channel": null
+      }
+    ]
+  },
+  {
+    "hash": "0x08a21aa003505dcb689b2c6c9335f7da66ab1909",
+    "threadHash": "0x08a21aa003505dcb689b2c6c9335f7da66ab1909",
+    "text": "GM millionaires of later times",
+    "embeds": {
+      "images": [
+        {
+          "type": "image",
+          "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/6c86c2f2-63a9-4e25-5779-fa4e65eab000/original",
+          "sourceUrl": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/6c86c2f2-63a9-4e25-5779-fa4e65eab000/original",
+          "alt": "Cast image embed",
+          "originalUrl": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/6c86c2f2-63a9-4e25-5779-fa4e65eab000/original"
+        }
+      ],
+      "urls": [],
+      "frames": [],
+      "quoteCasts": []
+    },
+    "mentions": [],
+    "mentionsPositions": [],
+    "external": false,
+    "author": {
+      "fid": "421507",
+      "followingCount": 1039,
+      "followerCount": 551,
+      "pfp": {
+        "url": "https://i.imgur.com/KFUKnlF.jpg",
+        "verified": false
+      },
+      "bio": {
+        "text": "mix of crypto and anime blah blah\nfollow back please",
+        "mentions": []
+      },
+      "external": false,
+      "custodyAddress": "0x0b8eee70d460d91f2616c3c966d4835c1f12a2b6",
+      "connectedAddress": "0x6633d8e03d108bd8d6a1def96e23fe53d9a9ac0f",
+      "allConnectedAddresses": {
+        "ethereum": [
+          "0x6633d8e03d108bd8d6a1def96e23fe53d9a9ac0f"
+        ],
+        "solana": []
+      },
+      "username": "processor",
+      "displayName": "Gojo",
+      "registeredAt": 1711828419000
+    },
+    "parentAuthor": null,
+    "timestamp": 1714113344000,
+    "replies": {
+      "count": 2
+    },
+    "reactions": {
+      "count": 8
+    },
+    "recasts": {
+      "count": 0
+    },
+    "channel": null,
+    "childCast": {
+      "hash": "0xf38ff0960f090dbf837c323eae6d19349a1ebb3b",
+      "parentHash": "0x08a21aa003505dcb689b2c6c9335f7da66ab1909",
+      "parentFid": "421507",
+      "threadHash": "0x08a21aa003505dcb689b2c6c9335f7da66ab1909",
+      "text": "heheh 20 $DEGEN",
+      "embeds": {
+        "images": [],
+        "urls": [],
+        "frames": [],
+        "quoteCasts": []
+      },
+      "mentions": [],
+      "mentionsPositions": [],
+      "external": false,
+      "author": {
+        "fid": "427775",
+        "followingCount": 376,
+        "followerCount": 210,
+        "pfp": {
+          "url": "https://i.imgur.com/qfbNFFj.jpg",
+          "verified": false
+        },
+        "bio": {
+          "text": "Solidity and web3 developer",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+        "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+          ],
+          "solana": []
+        },
+        "username": "justin-eth",
+        "displayName": "JustinStar",
+        "registeredAt": 1711886607000
+      },
+      "parentAuthor": {
+        "fid": "421507",
+        "followingCount": 1039,
+        "followerCount": 551,
+        "pfp": {
+          "url": "https://i.imgur.com/KFUKnlF.jpg",
+          "verified": false
+        },
+        "bio": {
+          "text": "mix of crypto and anime blah blah\nfollow back please",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x0b8eee70d460d91f2616c3c966d4835c1f12a2b6",
+        "connectedAddress": "0x6633d8e03d108bd8d6a1def96e23fe53d9a9ac0f",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0x6633d8e03d108bd8d6a1def96e23fe53d9a9ac0f"
+          ],
+          "solana": []
+        },
+        "username": "processor",
+        "displayName": "Gojo",
+        "registeredAt": 1711828419000
+      },
+      "timestamp": 1714119227000,
+      "replies": {
+        "count": 0
+      },
+      "reactions": {
+        "count": 1
+      },
+      "recasts": {
+        "count": 0
+      },
+      "channel": null
+    },
+    "childrenCasts": [
+      {
+        "hash": "0xf38ff0960f090dbf837c323eae6d19349a1ebb3b",
+        "parentHash": "0x08a21aa003505dcb689b2c6c9335f7da66ab1909",
+        "parentFid": "421507",
+        "threadHash": "0x08a21aa003505dcb689b2c6c9335f7da66ab1909",
+        "text": "heheh 20 $DEGEN",
+        "embeds": {
+          "images": [],
+          "urls": [],
+          "frames": [],
+          "quoteCasts": []
+        },
+        "mentions": [],
+        "mentionsPositions": [],
+        "external": false,
+        "author": {
+          "fid": "427775",
+          "followingCount": 376,
+          "followerCount": 210,
+          "pfp": {
+            "url": "https://i.imgur.com/qfbNFFj.jpg",
+            "verified": false
+          },
+          "bio": {
+            "text": "Solidity and web3 developer",
+            "mentions": []
+          },
+          "external": false,
+          "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+          "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+            ],
+            "solana": []
+          },
+          "username": "justin-eth",
+          "displayName": "JustinStar",
+          "registeredAt": 1711886607000
+        },
+        "parentAuthor": {
+          "fid": "421507",
+          "followingCount": 1039,
+          "followerCount": 551,
+          "pfp": {
+            "url": "https://i.imgur.com/KFUKnlF.jpg",
+            "verified": false
+          },
+          "bio": {
+            "text": "mix of crypto and anime blah blah\nfollow back please",
+            "mentions": []
+          },
+          "external": false,
+          "custodyAddress": "0x0b8eee70d460d91f2616c3c966d4835c1f12a2b6",
+          "connectedAddress": "0x6633d8e03d108bd8d6a1def96e23fe53d9a9ac0f",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0x6633d8e03d108bd8d6a1def96e23fe53d9a9ac0f"
+            ],
+            "solana": []
+          },
+          "username": "processor",
+          "displayName": "Gojo",
+          "registeredAt": 1711828419000
+        },
+        "timestamp": 1714119227000,
+        "replies": {
+          "count": 0
+        },
+        "reactions": {
+          "count": 1
+        },
+        "recasts": {
+          "count": 0
+        },
+        "channel": null
+      }
+    ]
+  },
+  {
+    "hash": "0x7f571f5a749640158b030746a30467265f45901e",
+    "threadHash": "0x7f571f5a749640158b030746a30467265f45901e",
+    "text": "congrats @swim 🫂 \n\nhttps://warpcast.com/imthedude/0xa5fd7651",
+    "embeds": {
+      "images": [],
+      "urls": [
+        {
+          "type": "castId",
+          "openGraph": {
+            "url": "https://far.quest/fid:281836/0x6010569190e215e9ccb8c8d860fe6254191e3c6c"
+          },
+          "fid": 281836,
+          "hash": "0x6010569190e215e9ccb8c8d860fe6254191e3c6c"
+        },
+        {
+          "type": "castId",
+          "openGraph": {
+            "url": "https://far.quest/fid:281836/0xa5fd7651167b642ba1b33a4e693c806a0140a546"
+          },
+          "fid": 281836,
+          "hash": "0xa5fd7651167b642ba1b33a4e693c806a0140a546"
+        }
+      ],
+      "frames": [],
+      "quoteCasts": [
+        {
+          "hash": "0x6010569190e215e9ccb8c8d860fe6254191e3c6c",
+          "threadHash": "0x6010569190e215e9ccb8c8d860fe6254191e3c6c",
+          "text": "ALL ABOARD DUDE LOTTERY!!\n\nWIN 50,000 $degen 💰\n\nHow to Enter:\n100 $degen = 1 Entry\n\nexample:1000 $degen = 10 entries\n\nMax 20 entries per user\n\n⏰ Ends in 7 Hours!\n\nily",
+          "embeds": {
+            "images": [
+              {
+                "type": "image",
+                "url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/0fa63ca4-a25d-43fa-f07b-f006ea80d100/original",
+                "sourceUrl": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/0fa63ca4-a25d-43fa-f07b-f006ea80d100/original",
+                "alt": "Cast image embed",
+                "originalUrl": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/0fa63ca4-a25d-43fa-f07b-f006ea80d100/original"
+              }
+            ],
+            "urls": [],
+            "frames": [],
+            "quoteCasts": []
+          },
+          "mentions": [],
+          "mentionsPositions": [],
+          "external": false,
+          "author": {
+            "fid": "281836",
+            "followingCount": 19390,
+            "followerCount": 17957,
+            "pfp": {
+              "url": "https://i.imgur.com/AhI14F2.png",
+              "verified": false
+            },
+            "bio": {
+              "text": "i’m the dude. i make art. i make memes. but, i don't make money. creatooor /actions /dude /designershumor /dankmemes /graphicdesign  /getmotivated",
+              "mentions": []
+            },
+            "external": false,
+            "custodyAddress": "0x86701226699517bb415a81cca67473cf39a1030d",
+            "connectedAddress": "0x5838ae59d80cec1126122e5bbd273e007d28c3b2",
+            "allConnectedAddresses": {
+              "ethereum": [
+                "0x5838ae59d80cec1126122e5bbd273e007d28c3b2"
+              ],
+              "solana": []
+            },
+            "displayName": "dude↑🔵 🎩",
+            "username": "imthedude",
+            "registeredAt": 1707080553000
+          },
+          "parentAuthor": null,
+          "timestamp": 1714048312000,
+          "replies": {
+            "count": 285
+          },
+          "reactions": {
+            "count": 410
+          },
+          "recasts": {
+            "count": 124
+          },
+          "channel": null
+        },
+        {
+          "hash": "0xa5fd7651167b642ba1b33a4e693c806a0140a546",
+          "parentHash": "0x639c11ee2ecb6adb8b3626342850e012e7e0d614",
+          "parentFid": "268455",
+          "threadHash": "0x6010569190e215e9ccb8c8d860fe6254191e3c6c",
+          "text": "congrats my dude\n\n50000 $degen",
+          "embeds": {
+            "images": [],
+            "urls": [],
+            "frames": [],
+            "quoteCasts": []
+          },
+          "mentions": [],
+          "mentionsPositions": [],
+          "external": false,
+          "author": {
+            "fid": "281836",
+            "followingCount": 19390,
+            "followerCount": 17957,
+            "pfp": {
+              "url": "https://i.imgur.com/AhI14F2.png",
+              "verified": false
+            },
+            "bio": {
+              "text": "i’m the dude. i make art. i make memes. but, i don't make money. creatooor /actions /dude /designershumor /dankmemes /graphicdesign  /getmotivated",
+              "mentions": []
+            },
+            "external": false,
+            "custodyAddress": "0x86701226699517bb415a81cca67473cf39a1030d",
+            "connectedAddress": "0x5838ae59d80cec1126122e5bbd273e007d28c3b2",
+            "allConnectedAddresses": {
+              "ethereum": [
+                "0x5838ae59d80cec1126122e5bbd273e007d28c3b2"
+              ],
+              "solana": []
+            },
+            "displayName": "dude↑🔵 🎩",
+            "username": "imthedude",
+            "registeredAt": 1707080553000
+          },
+          "parentAuthor": {
+            "fid": "268455",
+            "followingCount": 810,
+            "followerCount": 1882,
+            "pfp": {
+              "url": "https://i.imgur.com/auoFwcd.jpg",
+              "verified": false
+            },
+            "bio": {
+              "text": "idk what i'm doing either",
+              "mentions": []
+            },
+            "external": false,
+            "custodyAddress": "0x34e9c5994ca47f11b83a5d413d1b0777147d7fce",
+            "connectedAddress": "0x3a7d19ba6534ab149f8fe95f832cff8d64a0321c",
+            "allConnectedAddresses": {
+              "ethereum": [
+                "0x3a7d19ba6534ab149f8fe95f832cff8d64a0321c"
+              ],
+              "solana": []
+            },
+            "displayName": "Swim  🎩 ",
+            "username": "swim",
+            "registeredAt": 1706981801000
+          },
+          "timestamp": 1714075222000,
+          "replies": {
+            "count": 8
+          },
+          "reactions": {
+            "count": 16
+          },
+          "recasts": {
+            "count": 1
+          },
+          "channel": null
+        }
+      ]
+    },
+    "mentions": [
+      {
+        "fid": "268455",
+        "followingCount": 810,
+        "followerCount": 1882,
+        "pfp": {
+          "url": "https://i.imgur.com/auoFwcd.jpg",
+          "verified": false
+        },
+        "bio": {
+          "text": "idk what i'm doing either",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x34e9c5994ca47f11b83a5d413d1b0777147d7fce",
+        "connectedAddress": "0x3a7d19ba6534ab149f8fe95f832cff8d64a0321c",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0x3a7d19ba6534ab149f8fe95f832cff8d64a0321c"
+          ],
+          "solana": []
+        },
+        "displayName": "Swim  🎩 ",
+        "username": "swim",
+        "registeredAt": 1706981801000
+      }
+    ],
+    "mentionsPositions": [
+      9
+    ],
+    "external": false,
+    "author": {
+      "fid": "281836",
+      "followingCount": 19390,
+      "followerCount": 17957,
+      "pfp": {
+        "url": "https://i.imgur.com/AhI14F2.png",
+        "verified": false
+      },
+      "bio": {
+        "text": "i’m the dude. i make art. i make memes. but, i don't make money. creatooor /actions /dude /designershumor /dankmemes /graphicdesign  /getmotivated",
+        "mentions": []
+      },
+      "external": false,
+      "custodyAddress": "0x86701226699517bb415a81cca67473cf39a1030d",
+      "connectedAddress": "0x5838ae59d80cec1126122e5bbd273e007d28c3b2",
+      "allConnectedAddresses": {
+        "ethereum": [
+          "0x5838ae59d80cec1126122e5bbd273e007d28c3b2"
+        ],
+        "solana": []
+      },
+      "displayName": "dude↑🔵 🎩",
+      "username": "imthedude",
+      "registeredAt": 1707080553000
+    },
+    "parentAuthor": null,
+    "timestamp": 1714075272000,
+    "replies": {
+      "count": 100
+    },
+    "reactions": {
+      "count": 338
+    },
+    "recasts": {
+      "count": 44
+    },
+    "channel": null,
+    "childCast": {
+      "hash": "0x9ae8cd2d7d349bd773601b1a5c434ea5b223c2c4",
+      "parentHash": "0x7f571f5a749640158b030746a30467265f45901e",
+      "parentFid": "281836",
+      "threadHash": "0x7f571f5a749640158b030746a30467265f45901e",
+      "text": "Cool , 29 $DEGEN for Dude!",
+      "embeds": {
+        "images": [],
+        "urls": [],
+        "frames": [],
+        "quoteCasts": []
+      },
+      "mentions": [],
+      "mentionsPositions": [],
+      "external": false,
+      "author": {
+        "fid": "427775",
+        "followingCount": 376,
+        "followerCount": 210,
+        "pfp": {
+          "url": "https://i.imgur.com/qfbNFFj.jpg",
+          "verified": false
+        },
+        "bio": {
+          "text": "Solidity and web3 developer",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+        "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+          ],
+          "solana": []
+        },
+        "username": "justin-eth",
+        "displayName": "JustinStar",
+        "registeredAt": 1711886607000
+      },
+      "parentAuthor": {
+        "fid": "281836",
+        "followingCount": 19390,
+        "followerCount": 17957,
+        "pfp": {
+          "url": "https://i.imgur.com/AhI14F2.png",
+          "verified": false
+        },
+        "bio": {
+          "text": "i’m the dude. i make art. i make memes. but, i don't make money. creatooor /actions /dude /designershumor /dankmemes /graphicdesign  /getmotivated",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x86701226699517bb415a81cca67473cf39a1030d",
+        "connectedAddress": "0x5838ae59d80cec1126122e5bbd273e007d28c3b2",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0x5838ae59d80cec1126122e5bbd273e007d28c3b2"
+          ],
+          "solana": []
+        },
+        "displayName": "dude↑🔵 🎩",
+        "username": "imthedude",
+        "registeredAt": 1707080553000
+      },
+      "timestamp": 1714079614000,
+      "replies": {
+        "count": 0
+      },
+      "reactions": {
+        "count": 0
+      },
+      "recasts": {
+        "count": 0
+      },
+      "channel": null
+    },
+    "childrenCasts": [
+      {
+        "hash": "0x9ae8cd2d7d349bd773601b1a5c434ea5b223c2c4",
+        "parentHash": "0x7f571f5a749640158b030746a30467265f45901e",
+        "parentFid": "281836",
+        "threadHash": "0x7f571f5a749640158b030746a30467265f45901e",
+        "text": "Cool , 29 $DEGEN for Dude!",
+        "embeds": {
+          "images": [],
+          "urls": [],
+          "frames": [],
+          "quoteCasts": []
+        },
+        "mentions": [],
+        "mentionsPositions": [],
+        "external": false,
+        "author": {
+          "fid": "427775",
+          "followingCount": 376,
+          "followerCount": 210,
+          "pfp": {
+            "url": "https://i.imgur.com/qfbNFFj.jpg",
+            "verified": false
+          },
+          "bio": {
+            "text": "Solidity and web3 developer",
+            "mentions": []
+          },
+          "external": false,
+          "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+          "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+            ],
+            "solana": []
+          },
+          "username": "justin-eth",
+          "displayName": "JustinStar",
+          "registeredAt": 1711886607000
+        },
+        "parentAuthor": {
+          "fid": "281836",
+          "followingCount": 19390,
+          "followerCount": 17957,
+          "pfp": {
+            "url": "https://i.imgur.com/AhI14F2.png",
+            "verified": false
+          },
+          "bio": {
+            "text": "i’m the dude. i make art. i make memes. but, i don't make money. creatooor /actions /dude /designershumor /dankmemes /graphicdesign  /getmotivated",
+            "mentions": []
+          },
+          "external": false,
+          "custodyAddress": "0x86701226699517bb415a81cca67473cf39a1030d",
+          "connectedAddress": "0x5838ae59d80cec1126122e5bbd273e007d28c3b2",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0x5838ae59d80cec1126122e5bbd273e007d28c3b2"
+            ],
+            "solana": []
+          },
+          "displayName": "dude↑🔵 🎩",
+          "username": "imthedude",
+          "registeredAt": 1707080553000
+        },
+        "timestamp": 1714079614000,
+        "replies": {
+          "count": 0
+        },
+        "reactions": {
+          "count": 0
+        },
+        "recasts": {
+          "count": 0
+        },
+        "channel": null
+      }
+    ]
+  },
+  {
+    "hash": "0x7006563e8e7a7916e05c6ac6bd1139f40c8f937b",
+    "parentHash": "0x86e7a5be6b14ffa10fe461eb3ea9496b26f34499",
+    "parentFid": "427775",
+    "threadHash": "0x86e7a5be6b14ffa10fe461eb3ea9496b26f34499",
+    "text": "🍖 for my dude @justin-eth\n\n⠀⠀⠀\n🍖 x 7",
+    "embeds": {
+      "images": [],
+      "urls": [],
+      "frames": [],
+      "quoteCasts": []
+    },
+    "mentions": [
+      {
+        "fid": "427775",
+        "followingCount": 376,
+        "followerCount": 210,
+        "pfp": {
+          "url": "https://i.imgur.com/qfbNFFj.jpg",
+          "verified": false
+        },
+        "bio": {
+          "text": "Solidity and web3 developer",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+        "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+          ],
+          "solana": []
+        },
+        "username": "justin-eth",
+        "displayName": "JustinStar",
+        "registeredAt": 1711886607000
+      }
+    ],
+    "mentionsPositions": [
+      17
+    ],
+    "external": false,
+    "author": {
+      "fid": "281836",
+      "followingCount": 19390,
+      "followerCount": 17957,
+      "pfp": {
+        "url": "https://i.imgur.com/AhI14F2.png",
+        "verified": false
+      },
+      "bio": {
+        "text": "i’m the dude. i make art. i make memes. but, i don't make money. creatooor /actions /dude /designershumor /dankmemes /graphicdesign  /getmotivated",
+        "mentions": []
+      },
+      "external": false,
+      "custodyAddress": "0x86701226699517bb415a81cca67473cf39a1030d",
+      "connectedAddress": "0x5838ae59d80cec1126122e5bbd273e007d28c3b2",
+      "allConnectedAddresses": {
+        "ethereum": [
+          "0x5838ae59d80cec1126122e5bbd273e007d28c3b2"
+        ],
+        "solana": []
+      },
+      "displayName": "dude↑🔵 🎩",
+      "username": "imthedude",
+      "registeredAt": 1707080553000
+    },
+    "parentAuthor": {
+      "fid": "427775",
+      "followingCount": 376,
+      "followerCount": 210,
+      "pfp": {
+        "url": "https://i.imgur.com/qfbNFFj.jpg",
+        "verified": false
+      },
+      "bio": {
+        "text": "Solidity and web3 developer",
+        "mentions": []
+      },
+      "external": false,
+      "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+      "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+      "allConnectedAddresses": {
+        "ethereum": [
+          "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+        ],
+        "solana": []
+      },
+      "username": "justin-eth",
+      "displayName": "JustinStar",
+      "registeredAt": 1711886607000
+    },
+    "timestamp": 1714051155000,
+    "replies": {
+      "count": 1
+    },
+    "reactions": {
+      "count": 1
+    },
+    "recasts": {
+      "count": 0
+    },
+    "channel": null,
+    "childCast": {
+      "hash": "0xe5b9cb711d59557ff48f8f36fffd99a207a1cec9",
+      "parentHash": "0x7006563e8e7a7916e05c6ac6bd1139f40c8f937b",
+      "parentFid": "281836",
+      "threadHash": "0x86e7a5be6b14ffa10fe461eb3ea9496b26f34499",
+      "text": "Hahah Thanks Dude :)",
+      "embeds": {
+        "images": [],
+        "urls": [],
+        "frames": [],
+        "quoteCasts": []
+      },
+      "mentions": [],
+      "mentionsPositions": [],
+      "external": false,
+      "author": {
+        "fid": "427775",
+        "followingCount": 376,
+        "followerCount": 210,
+        "pfp": {
+          "url": "https://i.imgur.com/qfbNFFj.jpg",
+          "verified": false
+        },
+        "bio": {
+          "text": "Solidity and web3 developer",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+        "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+          ],
+          "solana": []
+        },
+        "username": "justin-eth",
+        "displayName": "JustinStar",
+        "registeredAt": 1711886607000
+      },
+      "parentAuthor": {
+        "fid": "281836",
+        "followingCount": 19390,
+        "followerCount": 17957,
+        "pfp": {
+          "url": "https://i.imgur.com/AhI14F2.png",
+          "verified": false
+        },
+        "bio": {
+          "text": "i’m the dude. i make art. i make memes. but, i don't make money. creatooor /actions /dude /designershumor /dankmemes /graphicdesign  /getmotivated",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x86701226699517bb415a81cca67473cf39a1030d",
+        "connectedAddress": "0x5838ae59d80cec1126122e5bbd273e007d28c3b2",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0x5838ae59d80cec1126122e5bbd273e007d28c3b2"
+          ],
+          "solana": []
+        },
+        "displayName": "dude↑🔵 🎩",
+        "username": "imthedude",
+        "registeredAt": 1707080553000
+      },
+      "timestamp": 1714051870000,
+      "replies": {
+        "count": 0
+      },
+      "reactions": {
+        "count": 0
+      },
+      "recasts": {
+        "count": 0
+      },
+      "channel": null
+    },
+    "childrenCasts": [
+      {
+        "hash": "0xe5b9cb711d59557ff48f8f36fffd99a207a1cec9",
+        "parentHash": "0x7006563e8e7a7916e05c6ac6bd1139f40c8f937b",
+        "parentFid": "281836",
+        "threadHash": "0x86e7a5be6b14ffa10fe461eb3ea9496b26f34499",
+        "text": "Hahah Thanks Dude :)",
+        "embeds": {
+          "images": [],
+          "urls": [],
+          "frames": [],
+          "quoteCasts": []
+        },
+        "mentions": [],
+        "mentionsPositions": [],
+        "external": false,
+        "author": {
+          "fid": "427775",
+          "followingCount": 376,
+          "followerCount": 210,
+          "pfp": {
+            "url": "https://i.imgur.com/qfbNFFj.jpg",
+            "verified": false
+          },
+          "bio": {
+            "text": "Solidity and web3 developer",
+            "mentions": []
+          },
+          "external": false,
+          "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+          "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+            ],
+            "solana": []
+          },
+          "username": "justin-eth",
+          "displayName": "JustinStar",
+          "registeredAt": 1711886607000
+        },
+        "parentAuthor": {
+          "fid": "281836",
+          "followingCount": 19390,
+          "followerCount": 17957,
+          "pfp": {
+            "url": "https://i.imgur.com/AhI14F2.png",
+            "verified": false
+          },
+          "bio": {
+            "text": "i’m the dude. i make art. i make memes. but, i don't make money. creatooor /actions /dude /designershumor /dankmemes /graphicdesign  /getmotivated",
+            "mentions": []
+          },
+          "external": false,
+          "custodyAddress": "0x86701226699517bb415a81cca67473cf39a1030d",
+          "connectedAddress": "0x5838ae59d80cec1126122e5bbd273e007d28c3b2",
+          "allConnectedAddresses": {
+            "ethereum": [
+              "0x5838ae59d80cec1126122e5bbd273e007d28c3b2"
+            ],
+            "solana": []
+          },
+          "displayName": "dude↑🔵 🎩",
+          "username": "imthedude",
+          "registeredAt": 1707080553000
+        },
+        "timestamp": 1714051870000,
+        "replies": {
+          "count": 0
+        },
+        "reactions": {
+          "count": 0
+        },
+        "recasts": {
+          "count": 0
+        },
+        "channel": null
+      }
+    ]
+  },
+  {
+    "hash": "0x86e7a5be6b14ffa10fe461eb3ea9496b26f34499",
+    "parentUrl": "chain://eip155:7777777/erc721:0x5d6a07d07354f8793d1ca06280c4adf04767ad7e",
+    "threadHash": "0x86e7a5be6b14ffa10fe461eb3ea9496b26f34499",
+    "text": "Thanks to @samuellhuber for sharing this content!\nFrog 🐸 need to be better in Error and BUG parts!",
+    "embeds": {
+      "images": [],
+      "urls": [
+        {
+          "type": "castId",
+          "openGraph": {
+            "url": "https://far.quest/fid:16085/0xd55895d64fc919337d53abb4665c16189b5a603e"
+          },
+          "fid": 16085,
+          "hash": "0xd55895d64fc919337d53abb4665c16189b5a603e"
+        }
+      ],
+      "frames": [],
+      "quoteCasts": [
+        {
+          "hash": "0xd55895d64fc919337d53abb4665c16189b5a603e",
+          "parentUrl": "https://warpcast.com/~/channel/frogfm",
+          "threadHash": "0xd55895d64fc919337d53abb4665c16189b5a603e",
+          "text": "Is it possible to return Error Message's in Frog?\n\nwhen I try to do it manually I get type errors. Nothing in docs\n\nFramesJS reference:\nhttps://framesjs.org/reference/core/error\n\nSpec Reference in Image attached.\n\nNeed to return error messages on app.transaction() calls so user knows what is going on. Thanks cc @awkweb",
+          "embeds": {
+            "images": [
+              {
+                "type": "image",
+                "url": "https://supercast.mypinata.cloud/ipfs/QmZcLwymGFs5cbUr9HcQtW9NJ6eHaFR8frsT2LMscA26vc?filename=Screenshot-2024-04-24-at-22.28.16.png",
+                "sourceUrl": "https://supercast.mypinata.cloud/ipfs/QmZcLwymGFs5cbUr9HcQtW9NJ6eHaFR8frsT2LMscA26vc?filename=Screenshot-2024-04-24-at-22.28.16.png",
+                "alt": "Cast image embed",
+                "originalUrl": "https://supercast.mypinata.cloud/ipfs/QmZcLwymGFs5cbUr9HcQtW9NJ6eHaFR8frsT2LMscA26vc?filename=Screenshot-2024-04-24-at-22.28.16.png"
+              }
+            ],
+            "urls": [
+              {
+                "type": "url",
+                "openGraph": {
+                  "title": "error",
+                  "image": "https://framesjs.org/og.png",
+                  "sourceUrl": "https://framesjs.org/reference/core/error",
+                  "url": "https://framesjs.org/reference/core/error"
+                },
+                "originalUrl": "https://framesjs.org/reference/core/error"
+              }
+            ],
+            "frames": [],
+            "quoteCasts": []
+          },
+          "mentions": [
+            {
+              "fid": "4433",
+              "followingCount": 30,
+              "followerCount": 733,
+              "pfp": {
+                "url": "https://i.imgur.com/0w7LqWr.jpg",
+                "verified": false
+              },
+              "bio": {
+                "text": "@wevm @paradigm /frogfm",
+                "mentions": [
+                  "wevm",
+                  "paradigm"
+                ]
+              },
+              "external": false,
+              "custodyAddress": "0x111ecbd7f6113cf1fb98b5a715ef1668cc2c4d0c",
+              "connectedAddress": "0xa0cf798816d4b9b9866b5330eea46a18382f251e",
+              "allConnectedAddresses": {
+                "ethereum": [
+                  "0xa0cf798816d4b9b9866b5330eea46a18382f251e"
+                ],
+                "solana": []
+              },
+              "username": "awkweb",
+              "displayName": "awkweb 🐸",
+              "registeredAt": 1693698244247
+            }
+          ],
+          "mentionsPositions": [
+            313
+          ],
+          "external": false,
+          "author": {
+            "fid": "16085",
+            "followingCount": 373,
+            "followerCount": 3769,
+            "pfp": {
+              "url": "https://i.imgur.com/OHMozjv.jpg",
+              "verified": false
+            },
+            "bio": {
+              "text": "Blockchain & Development Nerd 🤓 build, develop and operate Farcaster solutions @ dtech.vision also love tech, decentralization, fitness and oldschool rap 😎",
+              "mentions": []
+            },
+            "external": false,
+            "custodyAddress": "0x9d1db2991cfbefc00bab44fe6bf319f71ac600ce",
+            "connectedAddress": "0x7fdd26b919b651054f475e2c995720808b4cb6d7",
+            "allConnectedAddresses": {
+              "ethereum": [
+                "0x7fdd26b919b651054f475e2c995720808b4cb6d7",
+                "0x09cedb7bb69f9f6df646dba107d2baacda93d6c9"
+              ],
+              "solana": []
+            },
+            "username": "samuellhuber",
+            "displayName": "Samuel is @Farcon you too? DM!",
+            "registeredAt": 1693466436566
+          },
+          "parentAuthor": null,
+          "timestamp": 1713990573000,
+          "replies": {
+            "count": 2
+          },
+          "reactions": {
+            "count": 5
+          },
+          "recasts": {
+            "count": 0
+          },
+          "channel": {
+            "_id": "65f361be96ef0c904546df16",
+            "channelId": "frogfm",
+            "__v": 0,
+            "createdAt": 1709099071,
+            "description": "Framework for Farcaster Frames 🐸 https://frog.fm",
+            "imageUrl": "https://i.imgur.com/vsuZHzy.png",
+            "leadFid": "6143",
+            "name": "frog.fm",
+            "url": "https://warpcast.com/~/channel/frogfm"
+          }
+        }
+      ]
+    },
+    "mentions": [
+      {
+        "fid": "16085",
+        "followingCount": 373,
+        "followerCount": 3769,
+        "pfp": {
+          "url": "https://i.imgur.com/OHMozjv.jpg",
+          "verified": false
+        },
+        "bio": {
+          "text": "Blockchain & Development Nerd 🤓 build, develop and operate Farcaster solutions @ dtech.vision also love tech, decentralization, fitness and oldschool rap 😎",
+          "mentions": []
+        },
+        "external": false,
+        "custodyAddress": "0x9d1db2991cfbefc00bab44fe6bf319f71ac600ce",
+        "connectedAddress": "0x7fdd26b919b651054f475e2c995720808b4cb6d7",
+        "allConnectedAddresses": {
+          "ethereum": [
+            "0x7fdd26b919b651054f475e2c995720808b4cb6d7",
+            "0x09cedb7bb69f9f6df646dba107d2baacda93d6c9"
+          ],
+          "solana": []
+        },
+        "username": "samuellhuber",
+        "displayName": "Samuel is @Farcon you too? DM!",
+        "registeredAt": 1693466436566
+      }
+    ],
+    "mentionsPositions": [
+      10
+    ],
+    "external": false,
+    "author": {
+      "fid": "427775",
+      "followingCount": 376,
+      "followerCount": 210,
+      "pfp": {
+        "url": "https://i.imgur.com/qfbNFFj.jpg",
+        "verified": false
+      },
+      "bio": {
+        "text": "Solidity and web3 developer",
+        "mentions": []
+      },
+      "external": false,
+      "custodyAddress": "0x3ac922dd643574f181be24ec3dfa39b6caac335e",
+      "connectedAddress": "0xc333803213991d5e53541c7cfc96ab859d7b4852",
+      "allConnectedAddresses": {
+        "ethereum": [
+          "0xc333803213991d5e53541c7cfc96ab859d7b4852"
+        ],
+        "solana": []
+      },
+      "username": "justin-eth",
+      "displayName": "JustinStar",
+      "registeredAt": 1711886607000
+    },
+    "parentAuthor": null,
+    "timestamp": 1714041083000,
+    "replies": {
+      "count": 3
+    },
+    "reactions": {
+      "count": 2
+    },
+    "recasts": {
+      "count": 0
+    },
+    "channel": {
+      "_id": "65f361b896ef0c9045469036",
+      "channelId": "degen",
+      "__v": 0,
+      "createdAt": 1691015606,
+      "description": "Not financial advice",
+      "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafkreieudzvadtjy36j7x2i73isqw2jmgbwtum3p3eaahn4mnztuzl7y7e",
+      "name": "Degen",
+      "url": "chain://eip155:7777777/erc721:0x5d6a07d07354f8793d1ca06280c4adf04767ad7e",
+      "leadFid": "528"
+    }
+  }
+]

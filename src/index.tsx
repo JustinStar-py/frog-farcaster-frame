@@ -3,10 +3,11 @@ import { serveStatic } from '@hono/node-server/serve-static'
 import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev';
 import { createSystem } from 'frog/ui';
-import { DuneClient } from "@duneanalytics/client-sdk";
+import { fetchProfileByFid, fetchUserCastsByFid } from './far.quest';
+import userDataJson from './userData.json';
 // import { neynar } from 'frog/hubs'
 
-import * as qs from 'qs';
+import qs from 'qs';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import * as fs from 'fs';
@@ -97,68 +98,110 @@ app.frame('/degen-chart-show', async (c) => {
 app.frame('/farcaster-user-analytics', async (c) => {
   const { buttonValue, inputText, status, frameData } = c
 
-  const bgStyle = {
-    position: 'absolute', 
-    width: '100%', 
-    height: '100%',
+  ////////////////////////////////////////////////////
+  ///////////////  Styling Variables ///////////////////
+
+    const bgStyle = {
+      position: 'absolute', 
+      width: '100%', 
+      height: '100%',
+      border: '10px solid #A6EA35',
+      borderRadius: '14px',
+    }
+
+    const titleTextStyle = {
+      position: 'absolute', 
+      top: '65%', 
+      fontSize: 65, 
+    }
+
+    const subTitleTextStyle = {
+      position: 'absolute', 
+      top: '80%', 
+      fontSize: 30, 
+    }
+
+    const profileStyle = {
+      position: 'absolute', 
+      width: '250px',
+      height: '250px',
+      top: '15%',
+      left: '10%', 
+      border: '15px solid #fff',
+      borderRadius: '21px',
+    }
+
+    const usernameStyle = {
+      position: 'absolute',
+      top: '70%',
+      left: '10%',
+      fontSize: '35px',
+    }
+
+    const fidStyle = {
+      position: 'absolute',
+      top: '80%',
+      left: '10%',
+      fontSize: '25px',
   }
 
-  const titleTextStyle = {
-    position: 'absolute', 
-    top: '70%', 
-    fontSize: 65, 
-  }
+    const tableRowStyle = {
+      fontSize: 40, 
+      fontWeight: 'bolder', 
+      color: '#3AB5F1', 
+      borderRadius: '14px', 
+      border: '3px solid #3AB5F1', 
+      padding: '10px'
+    }
 
-  const subTitleTextStyle = {
-    position: 'absolute', 
-    top: '88%', 
-    fontSize: 30, 
-  }
+    const tableRowStyleGolden = {
+      fontSize: 42, 
+      fontWeight: 'bolder', 
+      color: 'gold', 
+      borderRadius: '14px', 
+      border: '6px solid #3AB5F1', 
+      padding: '10px'
+    }
 
-  const profileStyle = {
-    position: 'absolute', 
-    width: '250px',
-    height: '250px',
-    top: '15%',
-    left: '10%', 
-    border: '10px solid #A6EA35',
-    borderRadius: '14px',
-  }
+    //////////////////////////////////////////////
+    //////////////  API Handling  ////////////////
+    const userData = await fetchProfileByFid(frameData?.fid)
+    // const userCasts = await fetchUserCastsByFid(427775)
+    // const writing = await fs.writeFileSync('./userData.json', JSON.stringify(userCasts, null, 2))
 
-  const usernameStyle = {
-     position: 'absolute',
-     top: '70%',
-     left: '10%',
-     fontSize: '35px',
-  }
-
-  const fidStyle = {
-    position: 'absolute',
-    top: '80%',
-    left: '10%',
-    fontSize: '25px',
- }
-
-  return c.res({
+    return c.res({
     image: (
       buttonValue !== 'my-state' ? 
-      <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-         <img width={300} src="https://pbs.twimg.com/card_img/1780661788171759616/CLT7OKIf?format=png&name=large" style={bgStyle} />
+      <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E172A',  border: '40px solid #A6EA35',
+      borderRadius: '25px' }}>
+         <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '17%', left: '40%'}} />
          <span style={titleTextStyle}>Farcaster User Analyzer</span>
          <span style={subTitleTextStyle}>Frame by @justin-eth</span>
     </div> : 
     <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', 
     height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ position: 'absolute', display: 'flex', flexDirection: 'column', gap: '10px', width: '95vw', height: '90vh', backgroundColor: '#1E293B', borderRadius: '14px', padding: '25px', border: '25px solid #A6EA35'}}>
-        <img width={100} src="https://i.imgur.com/qfbNFFj.jpg" style={profileStyle} />
-        <span style={usernameStyle}>@JustinStar</span>
+        <img width={100} src={userData?.pfp.url} style={profileStyle} />
+        <span style={usernameStyle}>@{userData?.username}</span>
         <span style={fidStyle}>FID: {frameData?.fid}</span>
-        <div style={{ position: 'absolute', top: '30%', left: '40%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
-           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#3AB5F1' }}>Score:</span>
-           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#3AB5F1' }}>Reactions:</span>
-           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#3AB5F1' }}>Comments:</span>
-           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#3AB5F1' }}>Comments:</span>
-           <span style={{ fontSize: 40, fontWeight: 'bolder', color: '#A6EA35' }}>Comments:</span>
+        <div style={{ position: 'absolute', top: '7%', left: '35%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
+           <span style={tableRowStyleGolden}>
+             Score :
+          </span>
+           <span style={tableRowStyle}>
+             Followers :
+             <span style={{ color: "#A6EA35", paddingLeft: '10px', paddingRight: '5px' }}>{userData?.followerCount}</span>
+           </span>
+           <span style={tableRowStyle}>
+              Followings : 
+            <span style={{ color: "#A6EA35", paddingLeft: '10px', paddingRight: '5px' }}>{userData?.followingCount}</span>
+           </span>
+           <span style={tableRowStyle}>
+              My Casts :
+            </span>
+           <span style={tableRowStyle}>
+              Reply Casts :
+            </span>
         </div>
       </div>
     </div>     
