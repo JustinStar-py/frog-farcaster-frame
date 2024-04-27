@@ -96,7 +96,7 @@ app.frame('/degen-chart-show', async (c) => {
  * @route /farcaster-user-analytics
  */
 app.frame('/farcaster-user-analytics', async (c) => {
-  const { buttonValue, inputText, status, frameData } = c
+  const { buttonValue, inputText, frameData, status } = c
 
   ////////////////////////////////////////////////////
   ///////////////  Styling Variables ///////////////////
@@ -125,8 +125,8 @@ app.frame('/farcaster-user-analytics', async (c) => {
       position: 'absolute', 
       width: '250px',
       height: '250px',
-      top: '15%',
-      left: '10%', 
+      top: '13%',
+      left: '5%', 
       border: '15px solid #fff',
       borderRadius: '21px',
     }
@@ -134,24 +134,46 @@ app.frame('/farcaster-user-analytics', async (c) => {
     const usernameStyle = {
       position: 'absolute',
       top: '70%',
-      left: '10%',
-      fontSize: '35px',
+      left: '5%',
+      fontSize: '33px',
     }
 
     const fidStyle = {
       position: 'absolute',
       top: '80%',
-      left: '10%',
+      left: '5%',
       fontSize: '25px',
   }
 
+    const detailsTextStyle = {
+      position: 'absolute',
+      bottom: '2%',
+      left: '3%',
+      color: '#C848D5',
+      fontStyle: 'italic',
+      fontSize: '22px',
+    }
+
+    const tableStyle = {
+      position: 'absolute', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      gap: '10px', 
+      width: '95vw', 
+      height: '90vh', 
+      backgroundColor: '#1E293B', 
+      borderRadius: '14px', 
+      padding: '25px', 
+      border: '25px solid #A6EA35'
+    }
+
     const tableRowStyle = {
-      fontSize: 40, 
+      fontSize: 38, 
       fontWeight: 'bolder', 
       color: '#3AB5F1', 
-      borderRadius: '14px', 
-      border: '3px solid #3AB5F1', 
-      padding: '10px'
+      borderRadius: '17px', 
+      border: '5px solid #3AB5F1', 
+      padding: '5px'
     }
 
     const tableRowStyleGolden = {
@@ -163,58 +185,184 @@ app.frame('/farcaster-user-analytics', async (c) => {
       padding: '10px'
     }
 
+    const tableRowDataStyle = {
+      color: "#A6EA35",
+      paddingLeft: '10px', 
+      paddingRight: '5px'
+    }
+
     //////////////////////////////////////////////
     //////////////  API Handling  ////////////////
-    const userData = await fetchProfileByFid(frameData?.fid)
-    // const userCasts = await fetchUserCastsByFid(427775)
+    const handleZeroDataValue = async (data: any) => {
+       if (data === 0 || data === null) {
+           return '0'
+       } else {
+           return data
+       }
+    }
+
+    const handleBigNumbers = async (data: any) => {
+      // if is more than 1000 show 1k or 1m, show like +1.2k
+      let num;
+      if (data > 1000) {
+        if (data > 1000000) {
+          num = (data / 1000000).toFixed(1) + 'M';
+        }
+        num = (data / 1000) > 100 ? (data / 1000).toFixed(0) + 'k' : (data / 1000).toFixed(1) + 'k';
+      } else {
+        num = data
+      }
+      return num;
+    }
+    
+    const farcasterID = buttonValue === "start" ? inputText : frameData?.fid
+    const userData = await fetchProfileByFid(farcasterID)
+    const userCasts = await fetchUserCastsByFid(farcasterID)
+    
+    let userCastsCount = 0;
+    let userReplyCastsCount = 0;
+    let userCastsReactionsCount = 0;
+    let userCastsRepliesCount = 0;
+    let userCastsRecastsCount = 0;
+    let userAccountAge = 0;
+    let userScore = 0;
+    let userTier = 0;
+    const tiers = [
+      "New 👶",
+      "Rookie👨",
+      "Star ⭐️",
+      "Pro ⚡️",
+      "Diamond💎",
+      "Master🧙🏻‍♀️",
+      "Legend🧙🏻‍♂️",
+      "Godlike👑",
+    ];
     // const writing = await fs.writeFileSync('./userData.json', JSON.stringify(userCasts, null, 2))
 
-    return c.res({
+   if (userCasts) {
+      for (let i = 0; i < Object.keys(userCasts).length; i++) {
+        if (Object.keys(userCasts[i]).length === 15) {
+          userCastsCount += 1;
+          userCastsReactionsCount += userCasts[i].reactions.count;
+          userCastsRepliesCount += userCasts[i].replies.count;
+          userCastsRecastsCount += userCasts[i].recasts.count;
+        } else {
+          userReplyCastsCount += 1
+        }
+     }
+  }
+
+  if (userData) {
+    userScore = 
+    Number(((userCastsReactionsCount * 1 
+      + userCastsRepliesCount * 2 
+      + userCastsRecastsCount * 3.5
+      + userData.followerCount * 1.5 
+      + userData.followingCount * 1
+      + userCastsCount * 5)
+    / 100).toFixed(2))
+
+    // i wanna convert to days like 2 days , or 1 month and 30 days
+    userAccountAge = Math.floor((Date.now() - new Date(userData.registeredAt).getTime()) / (1000 * 60 * 60 * 24));
+  }
+
+  if (userData && userCasts) {
+    if (userData?.followerCount > 0 && userData?.followerCount <= 100) {
+      userTier = 0
+   } else if (userData?.followerCount > 100 && userData?.followerCount <= 250) {
+      userTier = 1
+   } else if (userData?.followerCount > 250 && userData?.followerCount <= 500) {
+      userTier = 2
+   } else if (userData?.followerCount > 500 && userData?.followerCount <= 1250) {
+      userTier = 3
+   } else if (userData?.followerCount > 1250 && userData?.followerCount <= 2000) {
+      userTier = 4
+   } else if (userData?.followerCount > 2000 && userData?.followerCount <= 3500) {
+      userTier = 5
+   } else if (userData?.followerCount > 3500 && userData?.followerCount <= 7500) {
+      userTier = 6
+   } else if (userData?.followerCount > 7500) {
+      userTier = 7
+   } else {
+      userTier = 0
+   }
+  }
+
+  return c.res({
     image: (
-      buttonValue !== 'my-state' ? 
+      status === 'initial' ?
       <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E172A',  border: '40px solid #A6EA35',
       borderRadius: '25px' }}>
          <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '17%', left: '40%'}} />
-         <span style={titleTextStyle}>Farcaster User Analyzer</span>
+         <span style={titleTextStyle}>Farcaster User Analyzer ✨</span>
          <span style={subTitleTextStyle}>Frame by @justin-eth</span>
     </div> : 
     <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', 
     height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ position: 'absolute', display: 'flex', flexDirection: 'column', gap: '10px', width: '95vw', height: '90vh', backgroundColor: '#1E293B', borderRadius: '14px', padding: '25px', border: '25px solid #A6EA35'}}>
+      <div style={tableStyle}>
         <img width={100} src={userData?.pfp.url} style={profileStyle} />
         <span style={usernameStyle}>@{userData?.username}</span>
         <span style={fidStyle}>FID: {frameData?.fid}</span>
-        <div style={{ position: 'absolute', top: '7%', left: '35%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
-           <span style={tableRowStyleGolden}>
+        <span style={detailsTextStyle}>**Snapshot will be update from 100 last casts</span>
+        <div style={{ position: 'absolute', top: '7%', left: '30%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
+           <span style={tableRowStyle}>
              Score :
+             <span style={tableRowDataStyle}>{userScore}</span>
           </span>
            <span style={tableRowStyle}>
-             Followers :
-             <span style={{ color: "#A6EA35", paddingLeft: '10px', paddingRight: '5px' }}>{userData?.followerCount}</span>
+             Followers:
+             <span style={tableRowDataStyle}>{handleBigNumbers(userData?.followerCount)}</span>
            </span>
            <span style={tableRowStyle}>
-              Followings : 
-            <span style={{ color: "#A6EA35", paddingLeft: '10px', paddingRight: '5px' }}>{userData?.followingCount}</span>
+              Followings: 
+            <span style={tableRowDataStyle}>{handleBigNumbers(userData?.followingCount)}</span>
            </span>
            <span style={tableRowStyle}>
-              My Casts :
+              Qoute casts:
+              <span style={tableRowDataStyle}>{handleZeroDataValue(userCastsCount)}</span>
             </span>
            <span style={tableRowStyle}>
-              Reply Casts :
+              Reply casts:
+             <span style={tableRowDataStyle}>{handleZeroDataValue(userReplyCastsCount)}</span>
+            </span>
+        </div>
+        <div style={{ position: 'absolute', top: '7%', left: '61%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
+            <span style={tableRowStyle}>
+                Active tier :
+               <span style={tableRowDataStyle}>{tiers[userTier]}</span>
+            </span>
+            <span style={tableRowStyle}>
+                Account age:
+               <span style={tableRowDataStyle}>{userAccountAge} d</span>
+            </span>
+           <span style={tableRowStyle}>
+              Reactions:
+              <span style={tableRowDataStyle}>{handleZeroDataValue(userCastsReactionsCount)}</span>
+           </span>
+           <span style={tableRowStyle}>
+              Replies: 
+            <span style={tableRowDataStyle}>{handleZeroDataValue(userCastsRepliesCount)}</span>
+           </span>
+           <span style={tableRowStyle}>
+              Recasts:
+              <span style={tableRowDataStyle}>{handleZeroDataValue(userCastsRecastsCount)}</span>
             </span>
         </div>
       </div>
     </div>     
     ),
     imageAspectRatio: '1.91:1',
+    imageOptions: {
+      emoji: "twemoji",
+    },
     intents: [
     <Button value="my-state">My State</Button>,
+    <Button value="start">Start</Button>,
     <Button value="share-frame">Share Frame</Button>,
     <TextInput placeholder="farcaster username" />],
   },
 )
 })
-
 
 
 

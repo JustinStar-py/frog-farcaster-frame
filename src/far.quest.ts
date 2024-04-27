@@ -4,6 +4,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export async function fetchProfileByFid(fid: any) {
+    if (!fid || fid === undefined) {
+      return null;
+    }
+
     interface User {
        result: { 
         user: {
@@ -51,10 +55,14 @@ export async function fetchProfileByFid(fid: any) {
 }
 
 export async function fetchUserCastsByFid(fid: any) {
+  if (!fid || fid === undefined) {
+    return null;
+  }
+
   const options = {
     method: 'GET',
     url: 'https://build.far.quest/farcaster/v2/casts',
-    params: {fid: fid, limit: '5'},
+    params: {fid: fid, limit: '100'},
     headers: {accept: 'application/json', 'API-KEY': process.env.FARQUEST_API_KEY},
   };
   
