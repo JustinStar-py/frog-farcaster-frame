@@ -3,7 +3,7 @@ import { serveStatic } from '@hono/node-server/serve-static'
 import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev';
 import { createSystem } from 'frog/ui';
-import { fetchProfileByFid, fetchUserCastsByFid } from './far.quest';
+import { fetchProfileByFid, fetchUserCastsByFid, fetchProfileByUsername, getFidByUsername } from './far.quest';
 import userDataJson from './userData.json';
 // import { neynar } from 'frog/hubs'
 
@@ -20,6 +20,98 @@ export const app = new Frog({
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
 })
 
+ ////////////////////////////////////////////////////
+  ///////////////  Styling Variables ///////////////////
+
+  const bgStyle = {
+    position: 'absolute', 
+    width: '100%', 
+    height: '100%',
+    border: '10px solid #A6EA35',
+    borderRadius: '14px',
+  }
+
+  const titleTextStyle = {
+    position: 'absolute', 
+    top: '57.5%', 
+    fontSize: 65, 
+  }
+
+  const subTitleTextStyle = {
+    position: 'absolute', 
+    top: '85%', 
+    fontSize: 30, 
+  }
+
+  const profileStyle = {
+    position: 'absolute', 
+    width: '250px',
+    height: '250px',
+    top: '13%',
+    left: '5%', 
+    border: '15px solid #fff',
+    borderRadius: '21px',
+  }
+
+  const usernameStyle = {
+    position: 'absolute',
+    top: '70%',
+    left: '5%',
+    fontSize: '33px',
+  }
+
+  const fidStyle = {
+    position: 'absolute',
+    top: '80%',
+    left: '5%',
+    fontSize: '25px',
+}
+
+  const detailsTextStyle = {
+    position: 'absolute',
+    bottom: '2%',
+    left: '3%',
+    color: '#C848D5',
+    fontStyle: 'italic',
+    fontSize: '22px',
+  }
+
+  const tableStyle = {
+    position: 'absolute', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    gap: '10px', 
+    width: '95vw', 
+    height: '90vh', 
+    backgroundColor: '#1E293B', 
+    borderRadius: '14px', 
+    padding: '25px', 
+    border: '25px solid #A6EA35'
+  }
+
+  const tableRowStyle = {
+    fontSize: 38, 
+    fontWeight: 'bolder', 
+    color: '#3AB5F1', 
+    borderRadius: '17px', 
+    border: '5px solid #3AB5F1', 
+    padding: '5px'
+  }
+
+  const tableRowGoldenStyle = {
+    fontSize: 38, 
+    fontWeight: 'bolder', 
+    color: '#3AB5F1', 
+    borderRadius: '17px', 
+    border: '7px solid gold', 
+    padding: '5px'
+  }
+
+  const tableRowDataStyle = {
+    color: "#A6EA35",
+    paddingLeft: '10px', 
+    paddingRight: '5px'
+  }
 
 app.use('/*', serveStatic({ root: './public' }))
 
@@ -52,6 +144,7 @@ app.frame('/degen-chart', (c) => {
   })
 })
 
+// ** show degen chart **
 app.frame('/degen-chart-show', async (c) => {
   const { buttonValue, status } = c
   const intervalTimesButtons = ["15m", "1h", "4h", "1d"]
@@ -91,105 +184,9 @@ app.frame('/degen-chart-show', async (c) => {
 })
 
 
-/**
- * Farcaster analytics
- * @route /farcaster-user-analytics
- */
-app.frame('/farcaster-user-analytics', async (c) => {
+// ** Farcaster analyzer **
+app.frame('/farcaster-user-analyzer', async (c) => {
   const { buttonValue, inputText, frameData, status } = c
-
-  ////////////////////////////////////////////////////
-  ///////////////  Styling Variables ///////////////////
-
-    const bgStyle = {
-      position: 'absolute', 
-      width: '100%', 
-      height: '100%',
-      border: '10px solid #A6EA35',
-      borderRadius: '14px',
-    }
-
-    const titleTextStyle = {
-      position: 'absolute', 
-      top: '65%', 
-      fontSize: 65, 
-    }
-
-    const subTitleTextStyle = {
-      position: 'absolute', 
-      top: '80%', 
-      fontSize: 30, 
-    }
-
-    const profileStyle = {
-      position: 'absolute', 
-      width: '250px',
-      height: '250px',
-      top: '13%',
-      left: '5%', 
-      border: '15px solid #fff',
-      borderRadius: '21px',
-    }
-
-    const usernameStyle = {
-      position: 'absolute',
-      top: '70%',
-      left: '5%',
-      fontSize: '33px',
-    }
-
-    const fidStyle = {
-      position: 'absolute',
-      top: '80%',
-      left: '5%',
-      fontSize: '25px',
-  }
-
-    const detailsTextStyle = {
-      position: 'absolute',
-      bottom: '2%',
-      left: '3%',
-      color: '#C848D5',
-      fontStyle: 'italic',
-      fontSize: '22px',
-    }
-
-    const tableStyle = {
-      position: 'absolute', 
-      display: 'flex', 
-      flexDirection: 'column', 
-      gap: '10px', 
-      width: '95vw', 
-      height: '90vh', 
-      backgroundColor: '#1E293B', 
-      borderRadius: '14px', 
-      padding: '25px', 
-      border: '25px solid #A6EA35'
-    }
-
-    const tableRowStyle = {
-      fontSize: 38, 
-      fontWeight: 'bolder', 
-      color: '#3AB5F1', 
-      borderRadius: '17px', 
-      border: '5px solid #3AB5F1', 
-      padding: '5px'
-    }
-
-    const tableRowStyleGolden = {
-      fontSize: 42, 
-      fontWeight: 'bolder', 
-      color: 'gold', 
-      borderRadius: '14px', 
-      border: '6px solid #3AB5F1', 
-      padding: '10px'
-    }
-
-    const tableRowDataStyle = {
-      color: "#A6EA35",
-      paddingLeft: '10px', 
-      paddingRight: '5px'
-    }
 
     //////////////////////////////////////////////
     //////////////  API Handling  ////////////////
@@ -215,10 +212,11 @@ app.frame('/farcaster-user-analytics', async (c) => {
       return num;
     }
     
-    const farcasterID = buttonValue === "start" ? inputText : frameData?.fid
+    const farcasterID = buttonValue === "search" ? await handleTextInput(inputText) : frameData?.fid
+
     const userData = await fetchProfileByFid(farcasterID)
     const userCasts = await fetchUserCastsByFid(farcasterID)
-    
+
     let userCastsCount = 0;
     let userReplyCastsCount = 0;
     let userCastsReactionsCount = 0;
@@ -232,7 +230,7 @@ app.frame('/farcaster-user-analytics', async (c) => {
       "Rookie👨",
       "Star ⭐️",
       "Pro ⚡️",
-      "Diamond💎",
+      "VIP 💎",
       "Master🧙🏻‍♀️",
       "Legend🧙🏻‍♂️",
       "Godlike👑",
@@ -288,24 +286,39 @@ app.frame('/farcaster-user-analytics', async (c) => {
    }
   }
 
+  const sharingScoreLink = `https://warpcast.com/~/compose?text=My Farcaster Score is ${userScore} with Tier ${tiers[userTier]}` + encodeURIComponent("\n\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-user-analyzer"
+  const sharingFrameLink = "https://warpcast.com/~/compose?text=Analysis your farcaster profile here! ✨" + encodeURIComponent("\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-user-analyzer"
+
+  const buttons = status === 'initial' ? [
+    <Button value="my-state">My State</Button>,
+    <Button value="search">🔎</Button>,
+    <TextInput placeholder="Enter farcaster username or fid" />,
+    <Button.Link href="https://warpcast.com/justin-eth">Dev</Button.Link>,
+    <Button.Link href={sharingFrameLink}>Share Frame</Button.Link>,
+  ] : [
+    <Button.Reset>Reset</Button.Reset>,
+    <Button.Link href={sharingScoreLink}>Share Score</Button.Link>,
+  ]
+
   return c.res({
     image: (
       status === 'initial' ?
       <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E172A',  border: '40px solid #A6EA35',
       borderRadius: '25px' }}>
-         <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '17%', left: '40%'}} />
-         <span style={titleTextStyle}>Farcaster User Analyzer ✨</span>
-         <span style={subTitleTextStyle}>Frame by @justin-eth</span>
+         <img width={1120} height={620} src="https://jolly-diverse-herring.ngrok-free.app/bg/profiles-banner.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
+         <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '10%', left: '39%'}} />
+         <span style={titleTextStyle}>Farcaster User Analyzer</span>
+         <span style={subTitleTextStyle}>Frame by @justin-eth <span style={{fontSize: '45px', paddingLeft: '6px', position: 'relative', top: '-7px'}}>🧙🏻‍♂️</span></span>
     </div> : 
     <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', 
     height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
       <div style={tableStyle}>
         <img width={100} src={userData?.pfp.url} style={profileStyle} />
         <span style={usernameStyle}>@{userData?.username}</span>
-        <span style={fidStyle}>FID: {frameData?.fid}</span>
-        <span style={detailsTextStyle}>**Snapshot will be update from 100 last casts</span>
+        <span style={fidStyle}>FID: {farcasterID || frameData?.fid}</span>
+        <span style={detailsTextStyle}>**Data is averaged from 100 recent casts**</span>
         <div style={{ position: 'absolute', top: '7%', left: '30%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
-           <span style={tableRowStyle}>
+           <span style={tableRowGoldenStyle}>
              Score :
              <span style={tableRowDataStyle}>{userScore}</span>
           </span>
@@ -318,7 +331,7 @@ app.frame('/farcaster-user-analytics', async (c) => {
             <span style={tableRowDataStyle}>{handleBigNumbers(userData?.followingCount)}</span>
            </span>
            <span style={tableRowStyle}>
-              Qoute casts:
+              Quote casts:
               <span style={tableRowDataStyle}>{handleZeroDataValue(userCastsCount)}</span>
             </span>
            <span style={tableRowStyle}>
@@ -327,7 +340,7 @@ app.frame('/farcaster-user-analytics', async (c) => {
             </span>
         </div>
         <div style={{ position: 'absolute', top: '7%', left: '61%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
-            <span style={tableRowStyle}>
+            <span style={tableRowGoldenStyle}>
                 Active tier :
                <span style={tableRowDataStyle}>{tiers[userTier]}</span>
             </span>
@@ -355,16 +368,98 @@ app.frame('/farcaster-user-analytics', async (c) => {
     imageOptions: {
       emoji: "twemoji",
     },
-    intents: [
-    <Button value="my-state">My State</Button>,
-    <Button value="start">Start</Button>,
-    <Button value="share-frame">Share Frame</Button>,
-    <TextInput placeholder="farcaster username" />],
+    intents: buttons,
   },
 )
 })
 
+// ** Compare two user data **
+app.frame('/how-many-wordo', async (c) => {
+  const { buttonValue, status } = c
+  const intervalTimesButtons = ["15m", "1h", "4h", "1d"]
 
+  const titleTextStyle = {
+    position: 'absolute', 
+    top: '57.5%', 
+    fontSize: 65, 
+  }
+
+  const subStyle = {
+    position: 'absolute', 
+    top: '90%', 
+    fontSize: 30, 
+  }
+
+  return c.res({
+    action: process.env.STATIC_NODE_URL + '/how-many-wordo',
+    image: (
+      status === 'initial' ?
+      <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E172A',  border: '40px solid #A6EA35',
+      borderRadius: '25px' }}>
+         <img width={1120} height={620} src="https://jolly-diverse-herring.ngrok-free.app/bg/words-banner.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
+         {/* <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '10%', left: '39%'}} /> */}
+         {/* <span style={titleTextStyle}>Compare Users</span> */}
+         <span style={subStyle}>Frame by @justin-eth <span style={{fontSize: '45px', paddingLeft: '6px', position: 'relative', top: '0px'}}>🧙🏻‍♂️</span></span>
+    </div>
+    : <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', 
+    height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={tableStyle}>
+        <img width={100} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={profileStyle} />
+        <span style={usernameStyle}>@</span>
+        <span style={fidStyle}>FID: 0</span>
+        <span style={detailsTextStyle}>**Data is averaged from 100 recent casts**</span>
+        <div style={{ position: 'absolute', top: '7%', left: '30%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
+           <span style={tableRowGoldenStyle}>
+             You Said GM for :
+             <span style={tableRowDataStyle}>{0}</span>
+          </span>
+           <span style={tableRowStyle}>
+              You Said $DEGEN for :
+             <span style={tableRowDataStyle}>{0}</span>
+           </span>
+           <span style={tableRowStyle}>
+              Followings: 
+            <span style={tableRowDataStyle}>{0}</span>
+           </span>
+           <span style={tableRowStyle}>
+              Quote casts:
+              <span style={tableRowDataStyle}>{0}</span>
+            </span>
+           <span style={tableRowStyle}>
+              Reply casts:
+             <span style={tableRowDataStyle}>{0}</span>
+            </span>
+        </div>
+      </div>
+    </div> 
+    ),
+    intents: [
+      <Button value="my-state">My state</Button>,
+      <Button value="search">🔎</Button>,
+      <Button.Link href='https://warpcast.com/justin-eth'>Share</Button.Link>,
+      <TextInput placeholder="Custom word" />,
+      <TextInput placeholder="Enter farcaster username or fid" />,
+    ],
+  })
+})
+
+// ** handle functions
+const handleTextInput = async (text: any) => {
+  if (!text || text === undefined) {
+    return null
+  }
+
+  let fid;
+  if (text.includes("@")) {
+     fid = await getFidByUsername(text.replace("@", ""))
+  } else if (Number.isInteger(parseInt(text))) {
+     fid = parseInt(text);
+  } else {
+     fid = await getFidByUsername(text)
+  }
+
+  return fid
+}
 
 const port = 3000
 console.log(`Server is running on port ${port}`)
