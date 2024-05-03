@@ -3,7 +3,9 @@ import { serveStatic } from '@hono/node-server/serve-static'
 import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev';
 import { createSystem } from 'frog/ui';
-import { fetchProfileByFid, fetchUserCastsByFid, fetchProfileByUsername, getFidByUsername } from './far.quest';
+import { 
+  fetchProfileByFid, fetchUserCastsByFid, 
+  fetchProfileByUsername,  getFidByUsername } from './far.quest';
 import userDataJson from './userData.json';
 // import { neynar } from 'frog/hubs'
 
@@ -374,24 +376,69 @@ app.frame('/farcaster-user-analyzer', async (c) => {
 })
 
 // ** Compare two user data **
-app.frame('/how-many-wordo', async (c) => {
-  const { buttonValue, status } = c
-  const intervalTimesButtons = ["15m", "1h", "4h", "1d"]
+app.frame('/how-many-words', async (c) => {
+  const { buttonValue, inputText, frameData, status } = c
+  
+  const farcasterID = buttonValue === "search" ? await handleTextInput(inputText) : frameData?.fid
 
-  const titleTextStyle = {
-    position: 'absolute', 
-    top: '57.5%', 
-    fontSize: 65, 
+
+  const userData = await fetchProfileByFid(farcasterID)
+  const userCasts = await fetchUserCastsByFid(farcasterID)
+  
+  let totalMentions = 0;
+  let totalWords = 0;
+  let words = ['degen', 'gm', 'gn', 'hello', 'farcaster', '$degen'];
+  let wordsCount = {
+    degen: 0,
+    gm: 0,
+    gn: 0,
+    hello: 0,
+    farcaster: 0,
+    $degen: 0
+  }
+
+  if (userCasts) {
+    for (let i = 0; i < Object.keys(userCasts).length; i++) {
+      if (Object.keys(userCasts[i]).length === 15) {
+          userCasts[i].text.toLowerCase().split(' ').forEach((word: string) => {
+          totalWords += 1
+
+          if (words.includes(word)) {
+            wordsCount[word.toLowerCase()] += 1;
+          }
+
+          if (word.startsWith('@')) {
+            totalMentions += 1
+          }
+        })
+      } else {
+        try {
+          userCasts[i].childrenCasts[0].text.toLowerCase().split(' ').forEach((word: string) => {
+            totalWords += 1
+            
+            if (words.includes(word)) {
+              wordsCount[word.toLowerCase()] += 1;
+            }
+            
+            if (word.startsWith('@')) {
+              totalMentions += 1
+            }
+          })
+        } catch (error) {
+          continue;
+        }
+      }
+    }
   }
 
   const subStyle = {
     position: 'absolute', 
-    top: '90%', 
+    top: '91%', 
     fontSize: 30, 
-  }
+  }  
 
   return c.res({
-    action: process.env.STATIC_NODE_URL + '/how-many-wordo',
+    action: process.env.STATIC_NODE_URL + '/how-many-words',
     image: (
       status === 'initial' ?
       <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E172A',  border: '40px solid #A6EA35',
@@ -399,35 +446,35 @@ app.frame('/how-many-wordo', async (c) => {
          <img width={1120} height={620} src="https://jolly-diverse-herring.ngrok-free.app/bg/words-banner.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
          {/* <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '10%', left: '39%'}} /> */}
          {/* <span style={titleTextStyle}>Compare Users</span> */}
-         <span style={subStyle}>Frame by @justin-eth <span style={{fontSize: '45px', paddingLeft: '6px', position: 'relative', top: '0px'}}>🧙🏻‍♂️</span></span>
+         <span style={subStyle}>Frame by @justin-eth <span style={{fontSize: '45px', paddingLeft: '6px', position: 'relative', bottom: '11px'}}>🧙🏻‍♂️</span></span>
     </div>
     : <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', 
     height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
       <div style={tableStyle}>
-        <img width={100} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={profileStyle} />
-        <span style={usernameStyle}>@</span>
-        <span style={fidStyle}>FID: 0</span>
+        <img width={100} src={userData?.pfp.url} style={profileStyle} />
+        <span style={usernameStyle}>{userData?.username}</span>
+        <span style={fidStyle}>FID: {userData?.fid}</span>
         <span style={detailsTextStyle}>**Data is averaged from 100 recent casts**</span>
-        <div style={{ position: 'absolute', top: '7%', left: '30%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
+        <div style={{ position: 'absolute', top: '7%', left: '36%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
            <span style={tableRowGoldenStyle}>
-             You Said GM for :
-             <span style={tableRowDataStyle}>{0}</span>
+              You said $DEGEN 🧢 for :
+              <span style={tableRowDataStyle}>{`${wordsCount.$degen + wordsCount.degen}`}</span>
+           </span>
+           <span style={tableRowStyle}>
+              You said GM ☀ for :
+             <span style={tableRowDataStyle}>{`${wordsCount.gm}`}</span>
           </span>
            <span style={tableRowStyle}>
-              You Said $DEGEN for :
-             <span style={tableRowDataStyle}>{0}</span>
+               You said GN 🌜 for :
+             <span style={tableRowDataStyle}>{`${wordsCount.gn}`}</span>
            </span>
            <span style={tableRowStyle}>
-              Followings: 
-            <span style={tableRowDataStyle}>{0}</span>
-           </span>
-           <span style={tableRowStyle}>
-              Quote casts:
-              <span style={tableRowDataStyle}>{0}</span>
+              You mentioned users 👥 for :
+              <span style={tableRowDataStyle}>{`${totalMentions}`}</span>
             </span>
            <span style={tableRowStyle}>
-              Reply casts:
-             <span style={tableRowDataStyle}>{0}</span>
+             total words 🖊 you said :
+             <span style={tableRowDataStyle}>{totalWords}</span>
             </span>
         </div>
       </div>
