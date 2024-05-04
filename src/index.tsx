@@ -376,18 +376,18 @@ app.frame('/farcaster-user-analyzer', async (c) => {
 })
 
 // ** Casts analyzer **
-app.frame('/farcaster-casts-analyzer', async (c) => {
+app.frame('/farcaster-casts-details', async (c) => {
   const { buttonValue, inputText, frameData, status } = c
   
-  const farcasterID = buttonValue === "search" ? await handleTextInput(inputText) : frameData?.fid
+  const farcasterID = buttonValue === "search" ? 
+    await handleTextInput(inputText) :
+    buttonValue && buttonValue?.startsWith('page-2-') ? buttonValue?.split('-')[2] : frameData?.fid
 
 
   const userData = await fetchProfileByFid(farcasterID)
   const userCasts = await fetchUserCastsByFid(farcasterID)
   // const userCasts = userDataJson
 
-  let quoteCastsCount = 0;
-  let replyCastsCount = 0;
   let totalMentions = 0;
   let totalWords = 0;
   let totalDegenTips = 0;
@@ -459,8 +459,21 @@ app.frame('/farcaster-casts-analyzer', async (c) => {
     totalUsersTipped = Object.keys(degenTips).length || 0;
   }
 
-  const sharingScoreLink = `https://warpcast.com/~/compose?text=I said ${totalWords} words with ${totalMentions} mentions that top mention is ${topMention}` + encodeURIComponent("\n") + `Also i said GM for ${wordsCount.gm} times, and $DEGEN for ${wordsCount.degen + wordsCount.$degen} times` + encodeURIComponent("\n\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-analyzer"
-  const sharingFrameLink = "https://warpcast.com/~/compose?text=Farcaster casts analyzer! ✨" + encodeURIComponent("\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-analyzer"
+  const customTableStyle = {
+    position: 'absolute', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    gap: '10px', 
+    width: '95vw', 
+    height: '90vh', 
+    backgroundColor: '#1E293B', 
+    borderRadius: '14px', 
+    padding: '25px', 
+    border: '25px solid #69FFE3'
+  }
+
+  const sharingScoreLink = `https://warpcast.com/~/compose?text=I said ${totalWords} words with ${totalMentions} mentions that top mention is ${topMention}` + encodeURIComponent("\n") + `Also i said GM for ${wordsCount.gm} times, and $DEGEN for ${wordsCount.degen + wordsCount.$degen} times` + encodeURIComponent("\n\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-details"
+  const sharingFrameLink = "https://warpcast.com/~/compose?text=Farcaster casts analyzer! ✨" + encodeURIComponent("\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-details"
 
   const buttons = status === 'initial' ? [
     <Button value="my-state">My state</Button>,
@@ -468,17 +481,21 @@ app.frame('/farcaster-casts-analyzer', async (c) => {
     <Button.Link href={sharingFrameLink}>Share</Button.Link>,
     <TextInput placeholder="Enter farcaster username or fid" /> 
   ] : [
-    <Button value={buttonValue === 'my-state' ? 'page-2' : 'my-state'}>{buttonValue === 'my-state' ? 'Page 2 ✨' : 'Back'}</Button>,
+    <Button value={buttonValue === 'my-state' ? 'page-2' : 
+      buttonValue === 'search' ? `page-2-${farcasterID}`  : 'my-state'
+    }>{
+      buttonValue === 'my-state' ? 'Page 2 ✨' : 
+      buttonValue === 'search' ? 'Page 2 ✨' : 'Back'
+    }</Button>,
     <Button.Reset>Reset</Button.Reset>,
     <Button.Link href={sharingScoreLink}>Share state</Button.Link>,
   ]
 
   return c.res({
-    action: process.env.STATIC_NODE_URL + '/farcaster-casts-analyzer',
+    action: process.env.STATIC_NODE_URL + '/farcaster-casts-details',
     image: (
       status === 'initial' ?
-      <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E172A',  border: '40px solid #A6EA35',
-      borderRadius: '25px' }}>
+      <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E172A',  border: '40px solid #69FFE3',borderRadius: '25px' }}>
          <img width={1120} height={620} src="https://jolly-diverse-herring.ngrok-free.app/bg/words-banner.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
          {/* <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '10%', left: '39%'}} /> */}
          {/* <span style={titleTextStyle}>Compare Users</span> */}
@@ -486,12 +503,12 @@ app.frame('/farcaster-casts-analyzer', async (c) => {
     </div>
     : 
    <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={tableStyle}>
+      <div style={customTableStyle}>
         <img width={100} src={userData?.pfp.url} style={profileStyle} />
-        <span style={usernameStyle}>{userData?.username}</span>
+        <span style={usernameStyle}>@{userData?.username}</span>
         <span style={fidStyle}>FID: {userData?.fid}</span>
         <span style={detailsTextStyle}>**Data is averaged from 100 recent casts**</span>
-        {buttonValue !== 'page-2' ?
+        {buttonValue && !buttonValue?.startsWith('page-2') ?
         <div style={{ position: 'absolute', top: '5%', left: '33%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
            <span style={tableRowGoldenStyle}>
               You Said $DEGEN 🧢 for :
@@ -503,7 +520,7 @@ app.frame('/farcaster-casts-analyzer', async (c) => {
           </span>
            <span style={tableRowStyle}>
               Mentioned users for :
-              <span style={tableRowDataStyle}>{`${totalMentions} users`}</span>
+              <span style={tableRowDataStyle}>{`${totalMentions} times`}</span>
             </span>
             <span style={tableRowStyle}>
               Top mention user:
@@ -517,20 +534,20 @@ app.frame('/farcaster-casts-analyzer', async (c) => {
         : 
         <div style={{ position: 'absolute', top: '5%', left: '33%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
            <span style={tableRowGoldenStyle}>
-              Favorite Channel :
+              Favorite Channel ✨ :
               <span style={tableRowDataStyle}>{favoriteChannel}</span>
            </span>
            <span style={tableRowStyle}>
-              Total Degen Tips :
+              Total Degen 🧢 Tips :
              <span style={tableRowDataStyle}>{`${totalDegenTips} $DEGEN`}</span>
           </span>
           <span style={tableRowStyle}>
-              Top Degen Tipped :
+              Top Degen 🧢 Tipped :
              <span style={tableRowDataStyle}>{`@${userTopTipped}`}</span>
           </span>
           <span style={tableRowStyle}>
-             Total users Tipped :
-             <span style={tableRowDataStyle}>{`${totalUsersTipped}`}</span>
+             Total users 👥 Tipped :
+             <span style={tableRowDataStyle}>{`${totalUsersTipped} users`}</span>
           </span>
         </div>
       }
