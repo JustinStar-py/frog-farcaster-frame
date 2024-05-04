@@ -375,8 +375,8 @@ app.frame('/farcaster-user-analyzer', async (c) => {
 )
 })
 
-// ** Compare two user data **
-app.frame('/how-many-words', async (c) => {
+// ** Casts analyzer **
+app.frame('/farcaster-casts-analyzer', async (c) => {
   const { buttonValue, inputText, frameData, status } = c
   
   const farcasterID = buttonValue === "search" ? await handleTextInput(inputText) : frameData?.fid
@@ -384,16 +384,24 @@ app.frame('/how-many-words', async (c) => {
 
   const userData = await fetchProfileByFid(farcasterID)
   const userCasts = await fetchUserCastsByFid(farcasterID)
-  
+  // const userCasts = userDataJson
+
+  let quoteCastsCount = 0;
+  let replyCastsCount = 0;
   let totalMentions = 0;
   let totalWords = 0;
-  let words = ['degen', 'gm', 'gn', 'hello', 'farcaster', '$degen'];
-  let wordsCount = {
+  let totalDegenTips = 0;
+  let userTopTipped;
+  let totalUsersTipped;
+  let topMention;
+  let favoriteChannel;
+  let words = ['degen', 'gm', 'gn', '$degen'];
+  let mentions: { [key: string]: any } = {};
+  let channels: { [key: string]: any } = {};
+  let degenTips: { [key: string]: any } = {};
+  let wordsCount: { [key: string]: any } = {
     degen: 0,
     gm: 0,
-    gn: 0,
-    hello: 0,
-    farcaster: 0,
     $degen: 0
   }
 
@@ -401,15 +409,19 @@ app.frame('/how-many-words', async (c) => {
     for (let i = 0; i < Object.keys(userCasts).length; i++) {
       if (Object.keys(userCasts[i]).length === 15) {
           userCasts[i].text.toLowerCase().split(' ').forEach((word: string) => {
-          totalWords += 1
+            totalWords += 1
+            if (words.includes(word)) {
+              wordsCount[word.toLowerCase()] += 1;
+            }
 
-          if (words.includes(word)) {
-            wordsCount[word.toLowerCase()] += 1;
-          }
+            if (word.startsWith('@')) {
+              totalMentions += 1;
+              mentions[word] = mentions[word] ? mentions[word] + 1 : 1;
+            }
 
-          if (word.startsWith('@')) {
-            totalMentions += 1
-          }
+            if (userCasts[i].channel) {
+              channels[userCasts[i].channel.name] = channels[userCasts[i].channel.name] ? channels[userCasts[i].channel.name] + 1 : 1;
+            }
         })
       } else {
         try {
@@ -418,10 +430,21 @@ app.frame('/how-many-words', async (c) => {
             
             if (words.includes(word)) {
               wordsCount[word.toLowerCase()] += 1;
+
+            if (word.startsWith('$')) {
+                 // get number before $DEGEN
+                 const degenIndexWord = userCasts[i].childrenCasts[0].text.toLowerCase().split(' ').findIndex((w: string) => w.startsWith('$'))
+                 const degenTip = userCasts[i].childrenCasts[0].text.toLowerCase().split(' ')[degenIndexWord - 1]
+                 const validDegenTip = Number.isNaN(Number(degenTip)) ? 0 : Number(degenTip)
+                 const tippedTo = userCasts[i].author.username 
+                 totalDegenTips += validDegenTip
+                 degenTips[tippedTo] = degenTips[tippedTo] ? degenTips[tippedTo] + 1 : 1
+               }
             }
             
             if (word.startsWith('@')) {
-              totalMentions += 1
+              totalMentions += 1;
+              mentions[word] = mentions[word] ? mentions[word] + 1 : 1;
             }
           })
         } catch (error) {
@@ -429,16 +452,29 @@ app.frame('/how-many-words', async (c) => {
         }
       }
     }
+
+    topMention = Object.keys(mentions).reduce((a, b) => mentions[a] > mentions[b] ? a : b, 'None');
+    favoriteChannel = Object.keys(channels).reduce((a, b) => channels[a] > channels[b] ? a : b, 'None');
+    userTopTipped = Object.keys(degenTips).reduce((a, b) => degenTips[a] > degenTips[b] ? a : b, 'None');
+    totalUsersTipped = Object.keys(degenTips).length || 0;
   }
 
-  const subStyle = {
-    position: 'absolute', 
-    top: '91%', 
-    fontSize: 30, 
-  }  
+  const sharingScoreLink = `https://warpcast.com/~/compose?text=I said ${totalWords} words with ${totalMentions} mentions that top mention is ${topMention}` + encodeURIComponent("\n") + `Also i said GM for ${wordsCount.gm} times, and $DEGEN for ${wordsCount.degen + wordsCount.$degen} times` + encodeURIComponent("\n\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-analyzer"
+  const sharingFrameLink = "https://warpcast.com/~/compose?text=Farcaster casts analyzer! ✨" + encodeURIComponent("\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-analyzer"
+
+  const buttons = status === 'initial' ? [
+    <Button value="my-state">My state</Button>,
+    <Button value="search">🔎</Button>,
+    <Button.Link href={sharingFrameLink}>Share</Button.Link>,
+    <TextInput placeholder="Enter farcaster username or fid" /> 
+  ] : [
+    <Button value={buttonValue === 'my-state' ? 'page-2' : 'my-state'}>{buttonValue === 'my-state' ? 'Page 2 ✨' : 'Back'}</Button>,
+    <Button.Reset>Reset</Button.Reset>,
+    <Button.Link href={sharingScoreLink}>Share state</Button.Link>,
+  ]
 
   return c.res({
-    action: process.env.STATIC_NODE_URL + '/how-many-words',
+    action: process.env.STATIC_NODE_URL + '/farcaster-casts-analyzer',
     image: (
       status === 'initial' ?
       <div style={{ color: 'white', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0E172A',  border: '40px solid #A6EA35',
@@ -446,47 +482,65 @@ app.frame('/how-many-words', async (c) => {
          <img width={1120} height={620} src="https://jolly-diverse-herring.ngrok-free.app/bg/words-banner.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
          {/* <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '10%', left: '39%'}} /> */}
          {/* <span style={titleTextStyle}>Compare Users</span> */}
-         <span style={subStyle}>Frame by @justin-eth <span style={{fontSize: '45px', paddingLeft: '6px', position: 'relative', bottom: '11px'}}>🧙🏻‍♂️</span></span>
+         <span style={subTitleTextStyle}>Frame by @justin-eth <span style={{fontSize: '45px', paddingLeft: '6px', position: 'relative', bottom: '11px'}}>🧙🏻‍♂️</span></span>
     </div>
-    : <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', 
-    height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+    : 
+   <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
       <div style={tableStyle}>
         <img width={100} src={userData?.pfp.url} style={profileStyle} />
         <span style={usernameStyle}>{userData?.username}</span>
         <span style={fidStyle}>FID: {userData?.fid}</span>
         <span style={detailsTextStyle}>**Data is averaged from 100 recent casts**</span>
-        <div style={{ position: 'absolute', top: '7%', left: '36%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
+        {buttonValue !== 'page-2' ?
+        <div style={{ position: 'absolute', top: '5%', left: '33%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
            <span style={tableRowGoldenStyle}>
-              You said $DEGEN 🧢 for :
-              <span style={tableRowDataStyle}>{`${wordsCount.$degen + wordsCount.degen}`}</span>
+              You Said $DEGEN 🧢 for :
+              <span style={tableRowDataStyle}>{`${wordsCount.$degen + wordsCount.degen} times`}</span>
            </span>
            <span style={tableRowStyle}>
-              You said GM ☀ for :
-             <span style={tableRowDataStyle}>{`${wordsCount.gm}`}</span>
+              You Said GM ☀ for :
+             <span style={tableRowDataStyle}>{`${wordsCount.gm} times`}</span>
           </span>
            <span style={tableRowStyle}>
-               You said GN 🌜 for :
-             <span style={tableRowDataStyle}>{`${wordsCount.gn}`}</span>
+              Mentioned users for :
+              <span style={tableRowDataStyle}>{`${totalMentions} users`}</span>
+            </span>
+            <span style={tableRowStyle}>
+              Top mention user:
+             <span style={tableRowDataStyle}>{topMention}</span>
            </span>
            <span style={tableRowStyle}>
-              You mentioned users 👥 for :
-              <span style={tableRowDataStyle}>{`${totalMentions}`}</span>
-            </span>
-           <span style={tableRowStyle}>
-             total words 🖊 you said :
+             Total words typed 🖊:
              <span style={tableRowDataStyle}>{totalWords}</span>
             </span>
         </div>
+        : 
+        <div style={{ position: 'absolute', top: '5%', left: '33%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
+           <span style={tableRowGoldenStyle}>
+              Favorite Channel :
+              <span style={tableRowDataStyle}>{favoriteChannel}</span>
+           </span>
+           <span style={tableRowStyle}>
+              Total Degen Tips :
+             <span style={tableRowDataStyle}>{`${totalDegenTips} $DEGEN`}</span>
+          </span>
+          <span style={tableRowStyle}>
+              Top Degen Tipped :
+             <span style={tableRowDataStyle}>{`@${userTopTipped}`}</span>
+          </span>
+          <span style={tableRowStyle}>
+             Total users Tipped :
+             <span style={tableRowDataStyle}>{`${totalUsersTipped}`}</span>
+          </span>
+        </div>
+      }
       </div>
     </div> 
     ),
-    intents: [
-      <Button value="my-state">My state</Button>,
-      <Button value="search">🔎</Button>,
-      <Button.Link href='https://warpcast.com/justin-eth'>Share</Button.Link>,
-      <TextInput placeholder="Custom word" />,
-      <TextInput placeholder="Enter farcaster username or fid" />,
-    ],
+    imageOptions: {
+      emoji: "twemoji",
+    },
+    intents: buttons,
   })
 })
 
