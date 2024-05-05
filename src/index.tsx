@@ -378,10 +378,11 @@ app.frame('/farcaster-user-analyzer', async (c) => {
 // ** Casts analyzer **
 app.frame('/farcaster-casts-details', async (c) => {
   const { buttonValue, inputText, frameData, status } = c
+
   
   const farcasterID = buttonValue === "search" ? 
     await handleTextInput(inputText) :
-    buttonValue && buttonValue?.startsWith('page-2-') ? buttonValue?.split('-')[2] : frameData?.fid
+      buttonValue?.startsWith('page-2-') ? buttonValue?.split('-')[2] : frameData?.fid
 
 
   const userData = await fetchProfileByFid(farcasterID)
@@ -453,7 +454,7 @@ app.frame('/farcaster-casts-details', async (c) => {
       }
     }
 
-    topMention = Object.keys(mentions).reduce((a, b) => mentions[a] > mentions[b] ? a : b, 'None');
+    topMention = (Object.keys(mentions).reduce((a, b) => mentions[a] > mentions[b] ? a : b, 'None')).split('\n')[0]
     favoriteChannel = Object.keys(channels).reduce((a, b) => channels[a] > channels[b] ? a : b, 'None');
     userTopTipped = Object.keys(degenTips).reduce((a, b) => degenTips[a] > degenTips[b] ? a : b, 'None');
     totalUsersTipped = Object.keys(degenTips).length || 0;
@@ -473,7 +474,7 @@ app.frame('/farcaster-casts-details', async (c) => {
   }
 
   const sharingScoreLink = `https://warpcast.com/~/compose?text=I said ${totalWords} words with ${totalMentions} mentions that top mention is ${topMention}` + encodeURIComponent("\n") + `Also i said GM for ${wordsCount.gm} times, and $DEGEN for ${wordsCount.degen + wordsCount.$degen} times` + encodeURIComponent("\n\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-details"
-  const sharingFrameLink = "https://warpcast.com/~/compose?text=Farcaster casts analyzer! ✨" + encodeURIComponent("\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-details"
+  const sharingFrameLink = "https://warpcast.com/~/compose?text=How and how many?! ✨" + encodeURIComponent("\n") + "frame by @justin-eth 🤝🏻&embeds[]=https://jolly-diverse-herring.ngrok-free.app/farcaster-casts-details"
 
   const buttons = status === 'initial' ? [
     <Button value="my-state">My state</Button>,
@@ -499,7 +500,7 @@ app.frame('/farcaster-casts-details', async (c) => {
          <img width={1120} height={620} src="https://jolly-diverse-herring.ngrok-free.app/bg/words-banner.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
          {/* <img width={250} src="https://jolly-diverse-herring.ngrok-free.app/logo/logo.png" style={{position: 'absolute', top: '10%', left: '39%'}} /> */}
          {/* <span style={titleTextStyle}>Compare Users</span> */}
-         <span style={subTitleTextStyle}>Frame by @justin-eth <span style={{fontSize: '45px', paddingLeft: '6px', position: 'relative', bottom: '11px'}}>🧙🏻‍♂️</span></span>
+         <span style={subTitleTextStyle}>Another frame by @justin-eth <span style={{fontSize: '45px', paddingLeft: '6px', position: 'relative', bottom: '11px'}}>🧙🏻‍♂️</span></span>
     </div>
     : 
    <div style={{ color: 'white',padding:'20px', display: 'flex', backgroundColor: '#0E172A', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
@@ -508,7 +509,7 @@ app.frame('/farcaster-casts-details', async (c) => {
         <span style={usernameStyle}>@{userData?.username}</span>
         <span style={fidStyle}>FID: {userData?.fid}</span>
         <span style={detailsTextStyle}>**Data is averaged from 100 recent casts**</span>
-        {buttonValue && !buttonValue?.startsWith('page-2') ?
+         {!buttonValue?.startsWith('page-2') ?
         <div style={{ position: 'absolute', top: '5%', left: '33%', display: 'flex', flexDirection: 'column', gap: '10px', padding: '25px' }}>
            <span style={tableRowGoldenStyle}>
               You Said $DEGEN 🧢 for :
@@ -543,7 +544,7 @@ app.frame('/farcaster-casts-details', async (c) => {
           </span>
           <span style={tableRowStyle}>
               Top Degen 🧢 Tipped :
-             <span style={tableRowDataStyle}>{`@${userTopTipped}`}</span>
+             <span style={tableRowDataStyle}>{userTopTipped == 'None' || userTopTipped == undefined || userTopTipped == 'undefined' ? 'None' : '@'+userTopTipped}</span>
           </span>
           <span style={tableRowStyle}>
              Total users 👥 Tipped :
