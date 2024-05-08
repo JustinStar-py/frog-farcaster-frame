@@ -1,0 +1,1377 @@
+{
+  "albums": {
+    "totalCount": 800,
+    "items": [
+      {
+        "data": {
+          "uri": "spotify:album:4DG6jlpuo1MHl8wPWzNuO3",
+          "name": "Telk Qadeya",
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:2GVksDv9UpY60i4CvytrZK",
+                "profile": {
+                  "name": "Cairokee"
+                }
+              }
+            ]
+          },
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab67616d00001e02088987dbb32f01c23274d1da",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d00004851088987dbb32f01c23274d1da",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d0000b273088987dbb32f01c23274d1da",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "date": {
+            "year": 2023
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:album:63ar33YvTHiJpDJWhJyzt3",
+          "name": "TELK QADEYA (REMIX)",
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:31n1PShaxOF0XV1FQkZJCf",
+                "profile": {
+                  "name": "prodbyatau"
+                }
+              }
+            ]
+          },
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab67616d00001e020ada5a9da9f51d64417f66dd",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d000048510ada5a9da9f51d64417f66dd",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d0000b2730ada5a9da9f51d64417f66dd",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "date": {
+            "year": 2024
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:album:7BIqPZ8LUI1FTwHnc72GTh",
+          "name": "TELK QADEYA (Beat)",
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:31n1PShaxOF0XV1FQkZJCf",
+                "profile": {
+                  "name": "prodbyatau"
+                }
+              }
+            ]
+          },
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab67616d00001e027fb98d94c4a0c17896ce8416",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d000048517fb98d94c4a0c17896ce8416",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d0000b2737fb98d94c4a0c17896ce8416",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "date": {
+            "year": 2024
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:album:2mHLKxb0p0xcAKs0VQTz9I",
+          "name": "Tel Quel Underground",
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:4EVSMYb2zBDoSHSGEqeztu",
+                "profile": {
+                  "name": "R. Missing"
+                }
+              },
+              {
+                "uri": "spotify:artist:1mksa9q8wjMTdaOzxtoOlA",
+                "profile": {
+                  "name": "Levingtquatre"
+                }
+              }
+            ]
+          },
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab67616d00001e02af0094b7dfdbcdb67b006aed",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d00004851af0094b7dfdbcdb67b006aed",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d0000b273af0094b7dfdbcdb67b006aed",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "date": {
+            "year": 2023
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:album:4Vn24QrJ8ypBbMgGg2kCoz",
+          "name": "AYAZAĞA FREESTYLE",
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:3AAxDwznaCZiJZ1OZRWw4J",
+                "profile": {
+                  "name": "WIXADIA"
+                }
+              }
+            ]
+          },
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab67616d00001e0262fbf6c5e98f93519bb7a11a",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d0000485162fbf6c5e98f93519bb7a11a",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67616d0000b27362fbf6c5e98f93519bb7a11a",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "date": {
+            "year": 2024
+          }
+        }
+      }
+    ]
+  },
+  "artists": {
+    "totalCount": 800,
+    "items": [
+      {
+        "data": {
+          "uri": "spotify:artist:2gTPBFjo3M9rvMSZWTk9nT",
+          "profile": {
+            "name": "Qadir Khan"
+          },
+          "visuals": {
+            "avatarImage": null
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:artist:0nES9rTgJJV7uJF2cIkJNS",
+          "profile": {
+            "name": "Talal Qureshi"
+          },
+          "visuals": {
+            "avatarImage": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000e5ebf746a8afaad9a87aea32a04e",
+                  "width": 640,
+                  "height": 640
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000f178f746a8afaad9a87aea32a04e",
+                  "width": 160,
+                  "height": 160
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616100005174f746a8afaad9a87aea32a04e",
+                  "width": 320,
+                  "height": 320
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:artist:6bmGjHSXH8rPaZ2iQhgNQ0",
+          "profile": {
+            "name": "Telltale"
+          },
+          "visuals": {
+            "avatarImage": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000e5eb24667876fdb0f82ef85d6b88",
+                  "width": 640,
+                  "height": 640
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000f17824667876fdb0f82ef85d6b88",
+                  "width": 160,
+                  "height": 160
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000517424667876fdb0f82ef85d6b88",
+                  "width": 320,
+                  "height": 320
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:artist:07YivsJVCrmhhjzBcBtMGv",
+          "profile": {
+            "name": "Adrian Quesada"
+          },
+          "visuals": {
+            "avatarImage": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000e5eb0ef04079a1924d6229fc862c",
+                  "width": 640,
+                  "height": 640
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000f1780ef04079a1924d6229fc862c",
+                  "width": 160,
+                  "height": 160
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab676161000051740ef04079a1924d6229fc862c",
+                  "width": 320,
+                  "height": 320
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:artist:2pGRniGOJSOvYoK3dGaBb8",
+          "profile": {
+            "name": "Sayeed Quadri"
+          },
+          "visuals": {
+            "avatarImage": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000e5ebbdfd29578354426263be7897",
+                  "width": 640,
+                  "height": 640
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6761610000f178bdfd29578354426263be7897",
+                  "width": 160,
+                  "height": 160
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616100005174bdfd29578354426263be7897",
+                  "width": 320,
+                  "height": 320
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "episodes": {
+    "totalCount": 723,
+    "items": [
+      {
+        "data": {
+          "uri": "spotify:episode:7yNouyolHHRxF53Gd3vymS",
+          "name": "salil qawafi salil",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68dba832235be4223e889567531",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1fba832235be4223e889567531",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8aba832235be4223e889567531",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "duration": {
+            "totalMilliseconds": 179656
+          },
+          "releaseDate": {
+            "isoString": "2023-10-30T19:10:00Z"
+          },
+          "podcast": {
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000f68de2857b54c4fdb977a2a762c4",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67656300005f1fe2857b54c4fdb977a2a762c4",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000ba8ae2857b54c4fdb977a2a762c4",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            }
+          },
+          "description": "سل القوا في",
+          "contentRating": {
+            "label": "NONE"
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:episode:5b6zwBx0Y2kpCPpRwxLt0f",
+          "name": "Ummati qad laha fajrun",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68d06f67d57db9cd4f04949f735",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1f06f67d57db9cd4f04949f735",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8a06f67d57db9cd4f04949f735",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "duration": {
+            "totalMilliseconds": 251454
+          },
+          "releaseDate": {
+            "isoString": "2024-02-27T22:16:00Z"
+          },
+          "podcast": {
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000f68d06f67d57db9cd4f04949f735",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67656300005f1f06f67d57db9cd4f04949f735",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000ba8a06f67d57db9cd4f04949f735",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            }
+          },
+          "description": ".",
+          "contentRating": {
+            "label": "NONE"
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:episode:47uRbkijsco1cNEUH6q4sj",
+          "name": "100 Al-'Aadiyaat ٱلْعَادِيَات",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68d6c87d43d4eaff81dba2a6a46",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1f6c87d43d4eaff81dba2a6a46",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8a6c87d43d4eaff81dba2a6a46",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "duration": {
+            "totalMilliseconds": 117324
+          },
+          "releaseDate": {
+            "isoString": "2020-08-17T19:00:00Z"
+          },
+          "podcast": {
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000f68d6c87d43d4eaff81dba2a6a46",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67656300005f1f6c87d43d4eaff81dba2a6a46",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000ba8a6c87d43d4eaff81dba2a6a46",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            }
+          },
+          "description": "Surah Al-'Aadiyaat with English translation.",
+          "contentRating": {
+            "label": "NONE"
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:episode:6TDjtbgdGO82PqpozTUlgn",
+          "name": "Salil qawafi salil",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68dc1bdc97cca1a29fab39a2e58",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1fc1bdc97cca1a29fab39a2e58",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8ac1bdc97cca1a29fab39a2e58",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "duration": {
+            "totalMilliseconds": 221611
+          },
+          "releaseDate": {
+            "isoString": "2023-12-05T11:08:00Z"
+          },
+          "podcast": {
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000f68dc1bdc97cca1a29fab39a2e58",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67656300005f1fc1bdc97cca1a29fab39a2e58",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000ba8ac1bdc97cca1a29fab39a2e58",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            }
+          },
+          "description": "...",
+          "contentRating": {
+            "label": "NONE"
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:episode:0tOo8pr2f5PR2OiOFYHwMd",
+          "name": "Ummati qad la Fajrun ",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68db295a8bc50c1cdf97c20aa28",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1fb295a8bc50c1cdf97c20aa28",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8ab295a8bc50c1cdf97c20aa28",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "duration": {
+            "totalMilliseconds": 252543
+          },
+          "releaseDate": {
+            "isoString": "2023-10-31T01:38:00Z"
+          },
+          "podcast": {
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000f68db295a8bc50c1cdf97c20aa28",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67656300005f1fb295a8bc50c1cdf97c20aa28",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab6765630000ba8ab295a8bc50c1cdf97c20aa28",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            }
+          },
+          "description": "Use your headset or airpods",
+          "contentRating": {
+            "label": "NONE"
+          }
+        }
+      }
+    ]
+  },
+  "genres": {
+    "totalCount": 0,
+    "items": []
+  },
+  "playlists": {
+    "totalCount": 615,
+    "items": [
+      {
+        "data": {
+          "uri": "spotify:playlist:37i9dQZF1E8Ope96demPy3",
+          "name": "Telk Qadeya Radio",
+          "description": "With Cairokee, Sharmoofers, Amir Eid, Massar Egbari and more",
+          "images": {
+            "items": [
+              {
+                "sources": [
+                  {
+                    "url": "https://seeded-session-images.scdn.co/v2/img/122/secondary/track/5T8lBGbV2vH3CzrnJxPa7K/en",
+                    "width": null,
+                    "height": null
+                  }
+                ]
+              }
+            ]
+          },
+          "owner": {
+            "name": "Spotify"
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:playlist:25iadBbqm7NUrcmtLBAv5j",
+          "name": "Telk Qadeya",
+          "description": "",
+          "images": {
+            "items": [
+              {
+                "sources": [
+                  {
+                    "url": "https://mosaic.scdn.co/640/ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e0245475c83bf91db827d70d2fcab67616d00001e025fdd4225c2c16f1a40226153ab67616d00001e0275230399649524be7c4f6eb5",
+                    "width": 640,
+                    "height": 640
+                  },
+                  {
+                    "url": "https://mosaic.scdn.co/300/ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e0245475c83bf91db827d70d2fcab67616d00001e025fdd4225c2c16f1a40226153ab67616d00001e0275230399649524be7c4f6eb5",
+                    "width": 300,
+                    "height": 300
+                  },
+                  {
+                    "url": "https://mosaic.scdn.co/60/ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e0245475c83bf91db827d70d2fcab67616d00001e025fdd4225c2c16f1a40226153ab67616d00001e0275230399649524be7c4f6eb5",
+                    "width": 60,
+                    "height": 60
+                  }
+                ]
+              }
+            ]
+          },
+          "owner": {
+            "name": "Osmohn"
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:playlist:4NRBCSCujs03SazhH67npH",
+          "name": "Telk Qadeya",
+          "description": "",
+          "images": {
+            "items": [
+              {
+                "sources": [
+                  {
+                    "url": "https://mosaic.scdn.co/640/ab67616d00001e02007fb3cbe131e2d324556982ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e026c60be7d3c5c1d5801924dbeab67616d00001e02eb146f7d037350aa81eef342",
+                    "width": 640,
+                    "height": 640
+                  },
+                  {
+                    "url": "https://mosaic.scdn.co/300/ab67616d00001e02007fb3cbe131e2d324556982ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e026c60be7d3c5c1d5801924dbeab67616d00001e02eb146f7d037350aa81eef342",
+                    "width": 300,
+                    "height": 300
+                  },
+                  {
+                    "url": "https://mosaic.scdn.co/60/ab67616d00001e02007fb3cbe131e2d324556982ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e026c60be7d3c5c1d5801924dbeab67616d00001e02eb146f7d037350aa81eef342",
+                    "width": 60,
+                    "height": 60
+                  }
+                ]
+              }
+            ]
+          },
+          "owner": {
+            "name": "Salim Alsabbagh"
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:playlist:5Drf80Ze4klEK5G88lLo5v",
+          "name": "Telk Qadeya",
+          "description": "",
+          "images": {
+            "items": [
+              {
+                "sources": [
+                  {
+                    "url": "https://mosaic.scdn.co/640/ab67616d00001e0205091dd9e144458639e3b659ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e0280d164fe6a006f87c1832076ab67616d00001e02d52eb9d86890cff4e525d521",
+                    "width": 640,
+                    "height": 640
+                  },
+                  {
+                    "url": "https://mosaic.scdn.co/300/ab67616d00001e0205091dd9e144458639e3b659ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e0280d164fe6a006f87c1832076ab67616d00001e02d52eb9d86890cff4e525d521",
+                    "width": 300,
+                    "height": 300
+                  },
+                  {
+                    "url": "https://mosaic.scdn.co/60/ab67616d00001e0205091dd9e144458639e3b659ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e0280d164fe6a006f87c1832076ab67616d00001e02d52eb9d86890cff4e525d521",
+                    "width": 60,
+                    "height": 60
+                  }
+                ]
+              }
+            ]
+          },
+          "owner": {
+            "name": "Bisan Sharif"
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:playlist:0Itwn9v3FeHAik6DTbj2xb",
+          "name": "Telk Qadeya",
+          "description": "",
+          "images": {
+            "items": [
+              {
+                "sources": [
+                  {
+                    "url": "https://mosaic.scdn.co/640/ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e023bab1ebe2d7c33d7ae20de0fab67616d00001e02a136127385a174cf5d901859ab67616d00001e02c2228ce3bb97ef17c8ded7f0",
+                    "width": 640,
+                    "height": 640
+                  },
+                  {
+                    "url": "https://mosaic.scdn.co/300/ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e023bab1ebe2d7c33d7ae20de0fab67616d00001e02a136127385a174cf5d901859ab67616d00001e02c2228ce3bb97ef17c8ded7f0",
+                    "width": 300,
+                    "height": 300
+                  },
+                  {
+                    "url": "https://mosaic.scdn.co/60/ab67616d00001e02088987dbb32f01c23274d1daab67616d00001e023bab1ebe2d7c33d7ae20de0fab67616d00001e02a136127385a174cf5d901859ab67616d00001e02c2228ce3bb97ef17c8ded7f0",
+                    "width": 60,
+                    "height": 60
+                  }
+                ]
+              }
+            ]
+          },
+          "owner": {
+            "name": "Rofydaalkhuly"
+          }
+        }
+      }
+    ]
+  },
+  "podcasts": {
+    "totalCount": 416,
+    "items": [
+      {
+        "data": {
+          "uri": "spotify:show:5kjwl6j3bE4WOfBnK0tyx0",
+          "name": "Tekking101 (Audio)",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68d025d72ed1310c64a5b39c397",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1f025d72ed1310c64a5b39c397",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8a025d72ed1310c64a5b39c397",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "type": "PODCAST",
+          "publisher": {
+            "name": "Matthew Crawford"
+          },
+          "mediaType": "AUDIO"
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:show:4hNRM9VPtW5MdocvmIgJGQ",
+          "name": "Badr Al-Turki - القارئ بدر التركى",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68d570433610fcc685e2bef1774",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1f570433610fcc685e2bef1774",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8a570433610fcc685e2bef1774",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "type": "PODCAST",
+          "publisher": {
+            "name": "ɴᴏʜᴀ"
+          },
+          "mediaType": "AUDIO"
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:show:0pJXEPmuYzqA430HgWo9Ft",
+          "name": "Tabalagh bil qaleel",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68da21e57007bacc4979d2ec6e8",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1fa21e57007bacc4979d2ec6e8",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8aa21e57007bacc4979d2ec6e8",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "type": "PODCAST",
+          "publisher": {
+            "name": "Callofduty Warzone"
+          },
+          "mediaType": "AUDIO"
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:show:39zPBEyaxgr6LBoUA7sYA7",
+          "name": "Quraan With Full Urdu Translation ",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/ab6765630000f68d3754d154f97b890c05c643dc",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/ab67656300005f1f3754d154f97b890c05c643dc",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/ab6765630000ba8a3754d154f97b890c05c643dc",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "type": "PODCAST",
+          "publisher": {
+            "name": "Quraan With Urdu Translation "
+          },
+          "mediaType": "AUDIO"
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:show:33d4OomjZzVQjcTn3a8a4S",
+          "name": "Ahmed Quran Mix",
+          "coverArt": {
+            "sources": [
+              {
+                "url": "https://i.scdn.co/image/fdd507e11b333382db458469365c26ddc4278f18",
+                "width": 64,
+                "height": 64
+              },
+              {
+                "url": "https://i.scdn.co/image/f3ab61c6eb4f68168c434e5a719d435b0f602215",
+                "width": 300,
+                "height": 300
+              },
+              {
+                "url": "https://i.scdn.co/image/09c2e335da39e1c6d857ad7a03886b513163cae4",
+                "width": 640,
+                "height": 640
+              }
+            ]
+          },
+          "type": "PODCAST",
+          "publisher": {
+            "name": "Ahmed MH"
+          },
+          "mediaType": "AUDIO"
+        }
+      }
+    ]
+  },
+  "topResults": {
+    "items": [
+      {
+        "data": {
+          "uri": "spotify:track:5T8lBGbV2vH3CzrnJxPa7K",
+          "id": "5T8lBGbV2vH3CzrnJxPa7K",
+          "name": "Telk Qadeya",
+          "albumOfTrack": {
+            "uri": "spotify:album:4DG6jlpuo1MHl8wPWzNuO3",
+            "name": "Telk Qadeya",
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00001e02088987dbb32f01c23274d1da",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00004851088987dbb32f01c23274d1da",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d0000b273088987dbb32f01c23274d1da",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            },
+            "id": "4DG6jlpuo1MHl8wPWzNuO3",
+            "sharingInfo": {
+              "shareUrl": "https://open.spotify.com/album/4DG6jlpuo1MHl8wPWzNuO3?si=flULSs5ERVqSvUydCxSJ-A"
+            }
+          },
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:2GVksDv9UpY60i4CvytrZK",
+                "profile": {
+                  "name": "Cairokee"
+                }
+              }
+            ]
+          },
+          "contentRating": {
+            "label": "NONE"
+          },
+          "duration": {
+            "totalMilliseconds": 354133
+          },
+          "playability": {
+            "playable": true
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:track:3ZV2Mnk7UOE5eDUXxFDlFX",
+          "id": "3ZV2Mnk7UOE5eDUXxFDlFX",
+          "name": "TELK QADEYA - REMIX",
+          "albumOfTrack": {
+            "uri": "spotify:album:63ar33YvTHiJpDJWhJyzt3",
+            "name": "TELK QADEYA (REMIX)",
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00001e020ada5a9da9f51d64417f66dd",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d000048510ada5a9da9f51d64417f66dd",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d0000b2730ada5a9da9f51d64417f66dd",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            },
+            "id": "63ar33YvTHiJpDJWhJyzt3",
+            "sharingInfo": {
+              "shareUrl": "https://open.spotify.com/album/63ar33YvTHiJpDJWhJyzt3?si=Ag_E_RvkTamxsPKSwgk6tg"
+            }
+          },
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:31n1PShaxOF0XV1FQkZJCf",
+                "profile": {
+                  "name": "prodbyatau"
+                }
+              }
+            ]
+          },
+          "contentRating": {
+            "label": "NONE"
+          },
+          "duration": {
+            "totalMilliseconds": 350299
+          },
+          "playability": {
+            "playable": true
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:track:7ebwV0cwsc6pf19UJE1zGH",
+          "id": "7ebwV0cwsc6pf19UJE1zGH",
+          "name": "Qadeyet Am Ahmed",
+          "albumOfTrack": {
+            "uri": "spotify:album:29zUJf1JbQeeHOLcjXDheR",
+            "name": "Am Ahmed",
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00001e02499fae16709f4571b65bf19f",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00004851499fae16709f4571b65bf19f",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d0000b273499fae16709f4571b65bf19f",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            },
+            "id": "29zUJf1JbQeeHOLcjXDheR",
+            "sharingInfo": {
+              "shareUrl": "https://open.spotify.com/album/29zUJf1JbQeeHOLcjXDheR?si=JcWQPlSaQgaA38hE5zUzjw"
+            }
+          },
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:0n7OndXLzk4Qa7CzNqQI2u",
+                "profile": {
+                  "name": "Omar Khairat"
+                }
+              }
+            ]
+          },
+          "contentRating": {
+            "label": "NONE"
+          },
+          "duration": {
+            "totalMilliseconds": 336366
+          },
+          "playability": {
+            "playable": true
+          }
+        }
+      }
+    ],
+    "featured": []
+  },
+  "tracks": {
+    "totalCount": 802,
+    "items": [
+      {
+        "data": {
+          "uri": "spotify:track:5T8lBGbV2vH3CzrnJxPa7K",
+          "id": "5T8lBGbV2vH3CzrnJxPa7K",
+          "name": "Telk Qadeya",
+          "albumOfTrack": {
+            "uri": "spotify:album:4DG6jlpuo1MHl8wPWzNuO3",
+            "name": "Telk Qadeya",
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00001e02088987dbb32f01c23274d1da",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00004851088987dbb32f01c23274d1da",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d0000b273088987dbb32f01c23274d1da",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            },
+            "id": "4DG6jlpuo1MHl8wPWzNuO3",
+            "sharingInfo": {
+              "shareUrl": "https://open.spotify.com/album/4DG6jlpuo1MHl8wPWzNuO3?si=c0L0HFpmSdGGEVofa6oQpA"
+            }
+          },
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:2GVksDv9UpY60i4CvytrZK",
+                "profile": {
+                  "name": "Cairokee"
+                }
+              }
+            ]
+          },
+          "contentRating": {
+            "label": "NONE"
+          },
+          "duration": {
+            "totalMilliseconds": 354133
+          },
+          "playability": {
+            "playable": true
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:track:3ZV2Mnk7UOE5eDUXxFDlFX",
+          "id": "3ZV2Mnk7UOE5eDUXxFDlFX",
+          "name": "TELK QADEYA - REMIX",
+          "albumOfTrack": {
+            "uri": "spotify:album:63ar33YvTHiJpDJWhJyzt3",
+            "name": "TELK QADEYA (REMIX)",
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00001e020ada5a9da9f51d64417f66dd",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d000048510ada5a9da9f51d64417f66dd",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d0000b2730ada5a9da9f51d64417f66dd",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            },
+            "id": "63ar33YvTHiJpDJWhJyzt3",
+            "sharingInfo": {
+              "shareUrl": "https://open.spotify.com/album/63ar33YvTHiJpDJWhJyzt3?si=Tfy7UWQ9QHu_Km7DERtLLQ"
+            }
+          },
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:31n1PShaxOF0XV1FQkZJCf",
+                "profile": {
+                  "name": "prodbyatau"
+                }
+              }
+            ]
+          },
+          "contentRating": {
+            "label": "NONE"
+          },
+          "duration": {
+            "totalMilliseconds": 350299
+          },
+          "playability": {
+            "playable": true
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:track:7ebwV0cwsc6pf19UJE1zGH",
+          "id": "7ebwV0cwsc6pf19UJE1zGH",
+          "name": "Qadeyet Am Ahmed",
+          "albumOfTrack": {
+            "uri": "spotify:album:29zUJf1JbQeeHOLcjXDheR",
+            "name": "Am Ahmed",
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00001e02499fae16709f4571b65bf19f",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00004851499fae16709f4571b65bf19f",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d0000b273499fae16709f4571b65bf19f",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            },
+            "id": "29zUJf1JbQeeHOLcjXDheR",
+            "sharingInfo": {
+              "shareUrl": "https://open.spotify.com/album/29zUJf1JbQeeHOLcjXDheR?si=FRd_4ottQga7Ake4Fkt3FA"
+            }
+          },
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:0n7OndXLzk4Qa7CzNqQI2u",
+                "profile": {
+                  "name": "Omar Khairat"
+                }
+              }
+            ]
+          },
+          "contentRating": {
+            "label": "NONE"
+          },
+          "duration": {
+            "totalMilliseconds": 336366
+          },
+          "playability": {
+            "playable": true
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:track:2p1CzVDZVaT5DZDQbbiJmF",
+          "id": "2p1CzVDZVaT5DZDQbbiJmF",
+          "name": "TELK QADEYA (Beat)",
+          "albumOfTrack": {
+            "uri": "spotify:album:7BIqPZ8LUI1FTwHnc72GTh",
+            "name": "TELK QADEYA (Beat)",
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00001e027fb98d94c4a0c17896ce8416",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d000048517fb98d94c4a0c17896ce8416",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d0000b2737fb98d94c4a0c17896ce8416",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            },
+            "id": "7BIqPZ8LUI1FTwHnc72GTh",
+            "sharingInfo": {
+              "shareUrl": "https://open.spotify.com/album/7BIqPZ8LUI1FTwHnc72GTh?si=gLMfzMsQQpeiyUpnfAZV5Q"
+            }
+          },
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:31n1PShaxOF0XV1FQkZJCf",
+                "profile": {
+                  "name": "prodbyatau"
+                }
+              }
+            ]
+          },
+          "contentRating": {
+            "label": "NONE"
+          },
+          "duration": {
+            "totalMilliseconds": 156287
+          },
+          "playability": {
+            "playable": true
+          }
+        }
+      },
+      {
+        "data": {
+          "uri": "spotify:track:2C8CO9xXwuFzBCrNAfS1aG",
+          "id": "2C8CO9xXwuFzBCrNAfS1aG",
+          "name": "Mansaya",
+          "albumOfTrack": {
+            "uri": "spotify:album:1iqpOLLDg7AggjbSQbD2ic",
+            "name": "Taling Dimalu Beautiful Tales",
+            "coverArt": {
+              "sources": [
+                {
+                  "url": "https://i.scdn.co/image/ab67616d00001e027e34b1e4cb4f906a9748f388",
+                  "width": 300,
+                  "height": 300
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d000048517e34b1e4cb4f906a9748f388",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "url": "https://i.scdn.co/image/ab67616d0000b2737e34b1e4cb4f906a9748f388",
+                  "width": 640,
+                  "height": 640
+                }
+              ]
+            },
+            "id": "1iqpOLLDg7AggjbSQbD2ic",
+            "sharingInfo": {
+              "shareUrl": "https://open.spotify.com/album/1iqpOLLDg7AggjbSQbD2ic?si=ZCTFwabvTje87ZqcVgDWEg"
+            }
+          },
+          "artists": {
+            "items": [
+              {
+                "uri": "spotify:artist:2dK2U2i24NYs1gLks6mINS",
+                "profile": {
+                  "name": "Kadialy Kouyate"
+                }
+              }
+            ]
+          },
+          "contentRating": {
+            "label": "NONE"
+          },
+          "duration": {
+            "totalMilliseconds": 246941
+          },
+          "playability": {
+            "playable": true
+          }
+        }
+      }
+    ]
+  },
+  "users": {
+    "totalCount": 0,
+    "items": []
+  }
+}

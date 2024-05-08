@@ -6,7 +6,8 @@ import { createSystem } from 'frog/ui';
 import { 
   fetchProfileByFid, fetchUserCastsByFid, 
   fetchProfileByUsername,  getFidByUsername } from './far.quest';
-import userDataJson from './userData.json';
+// import userDataJson from './userData.json';
+import songsData from './songs.json';
 // import { neynar } from 'frog/hubs'
 
 import qs from 'qs';
@@ -184,7 +185,6 @@ app.frame('/degen-chart-show', async (c) => {
     ]
   })
 })
-
 
 // ** Farcaster analyzer **
 app.frame('/farcaster-user-analyzer', async (c) => {
@@ -561,6 +561,90 @@ app.frame('/farcaster-casts-details', async (c) => {
     intents: buttons,
   })
 })
+
+// ** Search in Song
+app.frame("/spotify-explorer", async (c) => {
+  const { buttonValue, inputText, frameData, status } = c
+
+  let artist;
+  let songCover;
+  let songName;
+  let songDuration;
+  let songId;
+
+  const time = new Date().getTime();
+
+  if (status === "response") {
+      const options = {
+        method: 'GET',
+        url: 'https://spotify23.p.rapidapi.com/search/',
+        params: {
+          q: inputText || "Telk Qadeya",
+          type: 'multi',
+          offset: '0',
+          limit: '5',
+          numberOfTopResults: '3'
+        },
+        headers: {
+          'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+          'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+        }
+      };
+      
+      try {
+         const response = await axios.request(options);
+        const songData = response.data.topResults.items[0].data;
+        const songNameData = (songData.name).length > 13 ? (songData.name).slice(0, 12) + '...' : songData.name;
+        const songCoverURL = songData.albumOfTrack.coverArt.sources[0].url;
+        const songDurationData = songData.duration.totalMilliseconds;
+        const artistData = songData.artists.items[0].profile.name;
+        const songIdData = songData.id;
+
+        songNameData === undefined ? songName = "Song Name: None" : songName = "Name: " + songNameData;
+        songId = `ID: ${songIdData.slice(0, 14) + '...'}`;
+        artist = "Artist: " + artistData;
+
+        // convert song duration to minutes:seconds
+        const minutes = Math.floor(songDurationData / 60000);
+        const seconds = Math.floor((songDurationData % 60000) / 1000);
+       
+        songDuration = Number(songDurationData) > 0 ? `Total Duration: ${minutes}:${seconds}` : `0:0`;
+
+        // get image and then convert it to base64 and then save it
+        const imageBuffer = await axios.get(songCoverURL, { responseType: 'arraybuffer' });
+        fs.writeFileSync(`./public/spotify-songs-covers/${time}.png`, imageBuffer.data);
+        songCover = `https://jolly-diverse-herring.ngrok-free.app/spotify-songs-covers/${time}.png`;
+ 
+        // fs.writeFileSync('songs.json', JSON.stringify(response.data, null, 2));
+      } catch (error) {
+        console.error(error);
+      }
+  }
+
+   return c.res({
+      image: (
+        status === 'initial' ?
+          <div style={{ color: 'white', padding:'20px', display: 'flex', backgroundColor: '#0E172A', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+            <img width={1200} height={650} src="https://jolly-diverse-herring.ngrok-free.app/bg/explorer-spotify.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
+         </div>
+        : 
+         <div style={{ color: 'white', padding:'20px', display: 'flex', backgroundColor: '#0E172A', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
+           <img width={1200} height={650} src="https://jolly-diverse-herring.ngrok-free.app/bg/explorer-spotify-details.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
+          <img width={420} height={410} src={songCover} style={{position: 'absolute', top: '11%', left: '10%', borderRadius: '25px'}} />
+          <p style={{position: 'absolute', top: '11%', left: '53%', fontSize: 43}}>{songName}</p>
+          <p style={{position: 'absolute', top: '30%', left: '53%', fontSize: 45}}>{artist}</p>
+          <p style={{position: 'absolute', top: '48%', left: '53%', fontSize: 43}}>{songDuration}</p>
+          <p style={{position: 'absolute', top: '67%', left: '53%', fontSize: 39}}>{songId}</p>
+         </div>
+      ),
+      intents: [
+        <TextInput placeholder="Enter song name, artist or album" />,
+        <Button value={"search"}>Search</Button>,
+        <Button value={"random"}>Random Song</Button>,
+      ]
+    })        
+})
+
 
 // ** handle functions
 const handleTextInput = async (text: any) => {
