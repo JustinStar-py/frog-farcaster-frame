@@ -2,4 +2,4 @@ node_modules
 ./.env
 .env
 
-./public/spotify-songs-covers
+spotify-songs-covers

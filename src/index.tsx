@@ -567,6 +567,7 @@ app.frame('/farcaster-casts-details', async (c) => {
 app.frame("/spotify-explorer", async (c) => {
   const { buttonValue, inputText, frameData, status } = c
 
+  let query;
   let artist;
   let songCover;
   let songName;
@@ -582,7 +583,12 @@ app.frame("/spotify-explorer", async (c) => {
   const time = new Date().getTime();
 
   if (status === "response") {
-      const query = buttonValue === "random" ? generatedWords : inputText || "Telk Qadeya";
+      if (!buttonValue?.startsWith('next-page-')) {
+        query = buttonValue === "random" ? generatedWords : inputText || "Telk Qadeya";
+      } else {
+        query = buttonValue?.split('-')[3];
+      }
+
       const options = {
         method: 'GET',
         url: 'https://spotify23.p.rapidapi.com/search/',
@@ -601,7 +607,8 @@ app.frame("/spotify-explorer", async (c) => {
       
       try {
         const response = await axios.request(options);
-        const songData = response.data.topResults.items[0].data;
+        const indexOfData = buttonValue === "random" || buttonValue === "search" ? 0 :  buttonValue?.startsWith('next-page-2-') ? 2 : 1;
+        const songData = response.data.topResults.items[indexOfData].data;
         const songNameData = (songData.name).length > 13 ? (songData.name).slice(0, 12) + '...' : songData.name;
         const songCoverURL = songData.albumOfTrack.coverArt.sources[0].url;
         const songDurationData = songData.duration.totalMilliseconds;
@@ -631,15 +638,25 @@ app.frame("/spotify-explorer", async (c) => {
   }
    
    const buttons = status === 'initial' ? [
-      <TextInput placeholder="Enter song name, artist or album" />,
+      <TextInput placeholder="Enter Song name" />,
       <Button value={"search"}>Search</Button>,
       <Button value={"random"}>Random Song</Button>,
-   ] : [
+   ] : buttonValue?.startsWith('next-page-') ?
+           buttonValue.startsWith('next-page-1') ?   [
+             <Button.Link href={spotifyLink}>Listen on Spotify</Button.Link>,
+             <Button value={`next-page-2-${query}`}>Next</Button>,
+             <Button.Reset>Reset</Button.Reset>,
+          ] : [
+             <Button.Link href={spotifyLink}>Listen on Spotify</Button.Link>,
+             <Button.Reset>Reset</Button.Reset>,
+          ]
+   : [
       <Button.Link href={spotifyLink}>Listen on Spotify</Button.Link>,
-      <Button value={"page-2"}>Next </Button>,
+      <Button value={`next-page-1-${query}`}>Next</Button>,
       <Button.Reset>Reset</Button.Reset>,
    ]
 
+   console.log('buttonValue :', buttonValue)
    return c.res({
       image: (
         status === 'initial' ?
@@ -649,8 +666,8 @@ app.frame("/spotify-explorer", async (c) => {
         : 
          <div style={{ color: 'white', padding:'20px', display: 'flex', backgroundColor: '#0E172A', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
            <img width={1200} height={650} src="https://jolly-diverse-herring.ngrok-free.app/bg/explorer-spotify-details.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
-          <img width={420} height={410} src={songCover} style={{position: 'absolute', top: '11%', left: '10%', borderRadius: '25px'}} />
-          <p style={{position: 'absolute', top: '11%', left: '53%', fontSize: 43}}>{songName}</p>
+          <img width={425} height={410} src={songCover} style={{position: 'absolute', top: '11%', left: '10%', borderRadius: '25px'}} />
+          <p style={{position: 'absolute', top: '12%', left: '53%', fontSize: 43}}>{songName}</p>
           <p style={{position: 'absolute', top: '30%', left: '53%', fontSize: 45}}>{artist}</p>
           <p style={{position: 'absolute', top: '48%', left: '53%', fontSize: 43}}>{songDuration}</p>
           <p style={{position: 'absolute', top: '67%', left: '53%', fontSize: 39}}>{songId}</p>
