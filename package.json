@@ -15,7 +15,8 @@
     "dotenv": "^16.0.1",
     "frog": "latest",
     "hono": "^4",
-    "qs": "^6.12.1"
+    "qs": "^6.12.1",
+    "random-words": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",

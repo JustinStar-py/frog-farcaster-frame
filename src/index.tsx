@@ -6,8 +6,9 @@ import { createSystem } from 'frog/ui';
 import { 
   fetchProfileByFid, fetchUserCastsByFid, 
   fetchProfileByUsername,  getFidByUsername } from './far.quest';
+import { generate, count } from "random-words";
 // import userDataJson from './userData.json';
-import songsData from './songs.json';
+// import songsData from './songs.json';
 // import { neynar } from 'frog/hubs'
 
 import qs from 'qs';
@@ -571,15 +572,22 @@ app.frame("/spotify-explorer", async (c) => {
   let songName;
   let songDuration;
   let songId;
+  let spotifyLink;
+  let generatedWords = generate({
+    exactly: 1,
+    wordsPerString: 2,
+    formatter: (word) => word.toLowerCase(),
+  })[0]
 
   const time = new Date().getTime();
 
   if (status === "response") {
+      const query = buttonValue === "random" ? generatedWords : inputText || "Telk Qadeya";
       const options = {
         method: 'GET',
         url: 'https://spotify23.p.rapidapi.com/search/',
         params: {
-          q: inputText || "Telk Qadeya",
+          q: query,
           type: 'multi',
           offset: '0',
           limit: '5',
@@ -592,13 +600,14 @@ app.frame("/spotify-explorer", async (c) => {
       };
       
       try {
-         const response = await axios.request(options);
+        const response = await axios.request(options);
         const songData = response.data.topResults.items[0].data;
         const songNameData = (songData.name).length > 13 ? (songData.name).slice(0, 12) + '...' : songData.name;
         const songCoverURL = songData.albumOfTrack.coverArt.sources[0].url;
         const songDurationData = songData.duration.totalMilliseconds;
         const artistData = songData.artists.items[0].profile.name;
         const songIdData = songData.id;
+        spotifyLink = songData.albumOfTrack.sharingInfo.shareUrl;
 
         songNameData === undefined ? songName = "Song Name: None" : songName = "Name: " + songNameData;
         songId = `ID: ${songIdData.slice(0, 14) + '...'}`;
@@ -620,6 +629,16 @@ app.frame("/spotify-explorer", async (c) => {
         console.error(error);
       }
   }
+   
+   const buttons = status === 'initial' ? [
+      <TextInput placeholder="Enter song name, artist or album" />,
+      <Button value={"search"}>Search</Button>,
+      <Button value={"random"}>Random Song</Button>,
+   ] : [
+      <Button.Link href={spotifyLink}>Listen on Spotify</Button.Link>,
+      <Button value={"page-2"}>Next </Button>,
+      <Button.Reset>Reset</Button.Reset>,
+   ]
 
    return c.res({
       image: (
@@ -637,11 +656,7 @@ app.frame("/spotify-explorer", async (c) => {
           <p style={{position: 'absolute', top: '67%', left: '53%', fontSize: 39}}>{songId}</p>
          </div>
       ),
-      intents: [
-        <TextInput placeholder="Enter song name, artist or album" />,
-        <Button value={"search"}>Search</Button>,
-        <Button value={"random"}>Random Song</Button>,
-      ]
+      intents: buttons,
     })        
 })
 
