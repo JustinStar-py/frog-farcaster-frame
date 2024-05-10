@@ -564,7 +564,7 @@ app.frame('/farcaster-casts-details', async (c) => {
 })
 
 // ** Search in Song
-app.frame("/spotify-explorer", async (c) => {
+app.frame("/spotify-song-explorer", async (c) => {
   const { buttonValue, inputText, frameData, status } = c
 
   let query;
@@ -656,16 +656,15 @@ app.frame("/spotify-explorer", async (c) => {
       <Button.Reset>Reset</Button.Reset>,
    ]
 
-   console.log('buttonValue :', buttonValue)
    return c.res({
       image: (
         status === 'initial' ?
           <div style={{ color: 'white', padding:'20px', display: 'flex', backgroundColor: '#0E172A', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-            <img width={1200} height={650} src="https://jolly-diverse-herring.ngrok-free.app/bg/explorer-spotify.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
+            <img width={1200} height={650} src="https://jolly-diverse-herring.ngrok-free.app/bg/spotify-explorer.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
          </div>
         : 
          <div style={{ color: 'white', padding:'20px', display: 'flex', backgroundColor: '#0E172A', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
-           <img width={1200} height={650} src="https://jolly-diverse-herring.ngrok-free.app/bg/explorer-spotify-details.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
+           <img width={1200} height={650} src="https://jolly-diverse-herring.ngrok-free.app/bg/spotify-explorer-details.png" style={{position: 'absolute', top: '0%', left: '0%'}} />
           <img width={425} height={410} src={songCover} style={{position: 'absolute', top: '11%', left: '10%', borderRadius: '25px'}} />
           <p style={{position: 'absolute', top: '12%', left: '53%', fontSize: 43}}>{songName}</p>
           <p style={{position: 'absolute', top: '30%', left: '53%', fontSize: 45}}>{artist}</p>
